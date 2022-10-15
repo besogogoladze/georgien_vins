@@ -34,7 +34,7 @@ function App() {
         <>
           <Header />
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/georgien_vins" exact element={<Home />} />
             <Route path="/VINS" exact element={<Vins />} />
             <Route
               path="/Profil_Personnel"

@@ -103,7 +103,7 @@ function UpHeader() {
             Livraison gratuite à partir de 50€
           </p>
         </Tooltip>
-        <NavLink id="UpHeader_logo" exact="true" to="/">
+        <NavLink id="UpHeader_logo" exact="true" to="/georgien_vins">
           <Logo fill={theme} style={{ width: "60px", height: "auto" }} />
         </NavLink>
         <div

@@ -240,7 +240,7 @@ function Context({ children }) {
   };
   const localTheme = () => {
     const localTheme = localStorage.getItem("mode");
-    return localTheme ? JSON.parse(localTheme) : "";
+    return localTheme ? JSON.parse(localTheme) : "light";
   };
 
   const [state, dispatch] = useReducer(CartReducer, {

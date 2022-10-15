@@ -39,7 +39,9 @@ const BurgerMenu = () => {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
-      style={{ backgroundColor: theme === "light" ? "#fff" : "rgb(10, 12, 11)" }}
+      style={{
+        backgroundColor: theme === "light" ? "#fff" : "rgb(10, 12, 11)",
+      }}
     >
       <List>
         <ul
@@ -52,18 +54,26 @@ const BurgerMenu = () => {
             flexDirection: "column",
           }}
         >
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
               className="nav_a"
               exact="true"
-              to="/"
+              to="/georgien_vins"
             >
               HOME
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -73,7 +83,11 @@ const BurgerMenu = () => {
               VINS
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -83,7 +97,11 @@ const BurgerMenu = () => {
               SPIRITUEUX
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -93,7 +111,11 @@ const BurgerMenu = () => {
               DELICATESSEN
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -103,7 +125,11 @@ const BurgerMenu = () => {
               VIGNERON
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -113,7 +139,11 @@ const BurgerMenu = () => {
               BESTSELLERS
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -123,7 +153,11 @@ const BurgerMenu = () => {
               PAQUETS DE DEGUSTATION
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -133,7 +167,11 @@ const BurgerMenu = () => {
               GEORGIE
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -143,7 +181,11 @@ const BurgerMenu = () => {
               OFFRES
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -153,7 +195,11 @@ const BurgerMenu = () => {
               B2B & IMPORT
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
           <li>
             <NavLink
               style={{ color: theme === "light" ? "#333" : "#980433" }}
@@ -163,7 +209,11 @@ const BurgerMenu = () => {
               VIN PRIME
             </NavLink>
           </li>
-          <Divider style={{borderColor: theme === 'light' ? 'rgba(0, 0, 0, 0.12)' : '#333'}} />
+          <Divider
+            style={{
+              borderColor: theme === "light" ? "rgba(0, 0, 0, 0.12)" : "#333",
+            }}
+          />
         </ul>
       </List>
     </Box>
