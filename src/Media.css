@@ -1,0 +1,52 @@
+@media only screen and (max-width: 1200px) {
+  .SearchInput {
+    order: 3;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 15px;
+  }
+  #Navigation {
+    display: none !important;
+  }
+  #BurgerMenu {
+    display: block !important;
+  }
+}
+@media only screen and (max-width: 860px) {
+  #productsContainer {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 740px) {
+  #UpHeader_logo {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+@media only screen and (max-width: 510px) {
+  #VinsPage {
+    flex-wrap: wrap;
+  }
+  #filter {
+    width: 100%;
+  }
+  #filterContainer {
+    margin-top: 0 !important;
+    padding-bottom: 10px !important;
+  }
+  #filterRadio {
+    flex-direction: row;
+  }
+  #soldPack {
+    flex-direction: column;
+  }
+  #soldPack div {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .card {
+    flex: unset;
+  }
+}

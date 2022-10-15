@@ -1,0 +1,20 @@
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+.loading span:first-child {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.loading span:nth-child(2) {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.loading span:last-child {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+

@@ -1,0 +1,9 @@
+.modalPanier {
+  border-radius: 0.8rem;
+  border: 2px #0001 solid !important;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 20px 0.1px #001 !important;
+  max-height: 800px;
+  overflow-y: scroll;
+}
+

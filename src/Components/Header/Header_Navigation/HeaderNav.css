@@ -1,0 +1,9 @@
+.nav_a {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px 0;
+    font-weight: bold;
+}
+#BurgerMenu {
+    display: none;
+}

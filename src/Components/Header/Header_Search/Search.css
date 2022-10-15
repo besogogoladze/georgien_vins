@@ -1,0 +1,20 @@
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
+    backdrop-filter: blur(4px);
+}
+.MuiTooltip-tooltipPlacementBottom {
+  color: #fff !important;
+  background-color: #5b011d !important;
+  font-size: 0.8rem !important;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: #fff ;
+}
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #fff ;
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color: #fff ;
+}
+.MuiOutlinedInput-root{
+  color: #fff ;
+}
