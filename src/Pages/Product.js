@@ -9,7 +9,7 @@ const Product = () => {
     state: { products },
   } = CartState();
 
-  const singleProduct = products.filter((product) => product.id == id);
+  const singleProduct = products.data.filter((product) => product.id === id);
 
   return (
     <div>
