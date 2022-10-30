@@ -19,6 +19,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import "../UpHeader.css";
+import Paypal from "./Paypal";
 
 const style = {
   position: "absolute",
@@ -37,6 +38,7 @@ function HeaderPanier() {
   const [isHover, setIsHover] = React.useState(false);
   const [disabled, setDisabled] = React.useState(false);
   const [totalPrice, setTotalPrice] = React.useState();
+  const [checkout, setCheckOut] = React.useState(false);
   const {
     state: { cart, theme },
     dispatch,
@@ -225,12 +227,14 @@ function HeaderPanier() {
                 </Typography>
               </Container>
             )}
-            <Button disabled={disabled} onClick={setDisabled}>
-              Payer
-            </Button>
-            <NavLink onClick={handleClose} to={"/Panier"}>
-              Afficher le panier
-            </NavLink>
+            {cart.length !== 0 ? (
+              <>
+                <Paypal modal={setOpen} totalPrice={totalPrice} />
+                <NavLink onClick={handleClose} to={"/Panier"}>
+                  Afficher le panier
+                </NavLink>
+              </>
+            ) : null}
           </Container>
         </Box>
       </Modal>
