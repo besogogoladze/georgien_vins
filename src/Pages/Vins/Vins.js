@@ -1,10 +1,19 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Skeleton } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { CartState } from "../../Context/UseContext";
 import Filter from "./Filter";
 
 const Vins = () => {
+  const [loading, startTransition] = useTransition();
+  const [state, setState] = useState(null);
+
+  useEffect(() => {
+    startTransition(() => {
+      setState(true);
+    }, []);
+  }, [state]);
+
   const {
     state: { theme, cart, products },
     dispatch,
@@ -55,58 +64,133 @@ const Vins = () => {
           gap: "18px",
         }}
       >
-        {transformProducts()?.map((i, index) => (
-          <Grid
-            className={`card`}
-            item
-            xs={2}
-            sm={4}
-            md={12}
-            key={index}
-            style={{
-              border:
-                theme === "light" ? "1px #090d2a solid" : "2px #980433 solid",
-              boxSizing: "border-box",
-              boxShadow:
-                theme === "light" ? "0 0 1px #090d2a" : "0 0 15px #980433",
-            }}
-          >
-            <img style={{ width: "50%" }} src={i.img} alt={i.name} />
-            <h1 className={`${theme} word-break-all `}>
-              {i.name.toUpperCase()}
-            </h1>
-            <h3 className={theme}>{i.description}</h3>
-            <h4 className={theme}>{i.price + "€"}</h4>
-            {cart.some((product) => product.id === i.id) ? (
-              <Button
-                variant="contained"
-                color="error"
-                onClick={() => {
-                  dispatch({
-                    type: "REMOVE_FROM_CART",
-                    payload: i,
-                  });
+        {transformProducts()?.map((i, index) => {
+          return loading ? (
+            <Grid
+              className={`card`}
+              item
+              xs={2}
+              sm={4}
+              md={12}
+              key={index}
+              style={{
+                border:
+                  theme === "light" ? "1px #090d2a solid" : "2px #980433 solid",
+                  borderRadius: '1rem',
+                boxSizing: "border-box",
+                boxShadow:
+                  theme === "light" ? "0 0 1px #090d2a" : "0 0 15px #980433",
+                backgroundColor: theme === "light" ? "rgb(52, 58, 64)" : "#001",
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+                gap: 5,
+              }}
+            >
+              <Skeleton
+                animation="pulse"
+                variant="rectangular"
+                width={110}
+                height={200}
+                style={{
+                  backgroundColor:
+                    theme === "light" ? "rgb(195 195 195 / 54%)" : "rgb(152 4 51)",
                 }}
-              >
-                Remove From Cart
-              </Button>
-            ) : (
-              <Button
-                variant="contained"
-                color="success"
-                onClick={() => {
-                  dispatch({
-                    type: "ADD_TO_CART",
-                    payload: i,
-                  });
+              />
+              <Skeleton
+                animation="pulse"
+                variant="string"
+                width={210}
+                height={60}
+                style={{
+                  backgroundColor:
+                    theme === "light" ? "rgb(195 195 195 / 54%)" : "rgb(152 4 51)",
                 }}
-                disabled={!i.inStock}
-              >
-                {!i.inStock ? "Out of Stock" : "Add to Cart"}
-              </Button>
-            )}
-          </Grid>
-        ))}
+              />
+              <Skeleton
+                animation="pulse"
+                variant="string"
+                width={210}
+                height={20}
+                style={{
+                  backgroundColor:
+                    theme === "light" ? "rgb(195 195 195 / 54%)" : "rgb(152 4 51)",
+                }}
+              />
+              <Skeleton
+                animation="pulse"
+                variant="string"
+                width={210}
+                height={10}
+                style={{
+                  backgroundColor:
+                    theme === "light" ? "rgb(195 195 195 / 54%)" : "rgb(152 4 51)",
+                }}
+              />
+              <Skeleton
+                animation="pulse"
+                variant="text"
+                width={110}
+                height={60}
+                style={{
+                  backgroundColor:
+                    theme === "light" ? "rgb(195 195 195 / 54%)" : "rgb(152 4 51)",
+                }}
+              />
+            </Grid>
+          ) : (
+            <Grid
+              className={`card`}
+              item
+              xs={2}
+              sm={4}
+              md={12}
+              key={index}
+              style={{
+                border:
+                  theme === "light" ? "1px #090d2a solid" : "2px #980433 solid",
+                boxSizing: "border-box",
+                boxShadow:
+                  theme === "light" ? "0 0 1px #090d2a" : "0 0 15px #980433",
+              }}
+            >
+              <img style={{ width: "50%" }} src={i.img} alt={i.name} />
+              <h1 className={`${theme} word-break-all `}>
+                {i.name.toUpperCase()}
+              </h1>
+              <h3 className={theme}>{i.description}</h3>
+              <h4 className={theme}>{i.price + "€"}</h4>
+              {cart.some((product) => product.id === i.id) ? (
+                <Button
+                  variant="contained"
+                  color="error"
+                  onClick={() => {
+                    dispatch({
+                      type: "REMOVE_FROM_CART",
+                      payload: i,
+                    });
+                  }}
+                >
+                  Remove From Cart
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={() => {
+                    dispatch({
+                      type: "ADD_TO_CART",
+                      payload: i,
+                    });
+                  }}
+                  disabled={!i.inStock}
+                >
+                  {!i.inStock ? "Out of Stock" : "Add to Cart"}
+                </Button>
+              )}
+            </Grid>
+          );
+        })}
       </Container>
     </div>
   );

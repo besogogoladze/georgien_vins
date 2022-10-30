@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Form, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -15,7 +15,6 @@ import {
   FormControl,
   InputLabel,
   MenuItem,
-  NativeSelect,
   Select,
   Tooltip,
 } from "@mui/material";
@@ -110,7 +109,7 @@ function HeaderPanier() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className={"modalPanier"}>
+        <Box id="panier" sx={style} className={"modalPanier"}>
           <Container>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Panier

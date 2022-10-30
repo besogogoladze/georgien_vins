@@ -58,12 +58,11 @@ function App() {
           fontSize: "50px",
           color: theme === "light" ? "#980433" : "#fff",
           cursor: "pointer",
-          zIndex: 10000
+          zIndex: 10000,
         }}
         onClick={() => {
           window.scrollTo({
-            top: 100,
-            left: 100,
+            top: 0,
             behavior: "smooth",
           });
         }}
