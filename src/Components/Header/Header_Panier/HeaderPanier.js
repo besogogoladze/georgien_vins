@@ -36,9 +36,7 @@ const style = {
 function HeaderPanier() {
   const [open, setOpen] = React.useState(false);
   const [isHover, setIsHover] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(false);
   const [totalPrice, setTotalPrice] = React.useState();
-  const [checkout, setCheckOut] = React.useState(false);
   const {
     state: { cart, theme },
     dispatch,
@@ -62,7 +60,6 @@ function HeaderPanier() {
 
   const handleMouseLeave = () => {
     setIsHover(false);
-    setDisabled(false);
   };
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
