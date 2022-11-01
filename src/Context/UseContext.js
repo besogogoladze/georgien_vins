@@ -232,14 +232,14 @@ function Context({ children }) {
   //   console.log(productsData);
   // }, []);
   // console.log(productsData);
-  
+  localStorage.setItem("mode", JSON.stringify("light"));
 
   const localData = () => {
     const localData = localStorage.getItem("cart");
     return localData ? JSON.parse(localData) : [];
   };
   const localTheme = () => {
-    const localTheme = localStorage.getItem("mode");
+    var localTheme = localStorage.getItem("mode");
     return localTheme ? JSON.parse(localTheme) : "light";
   };
 

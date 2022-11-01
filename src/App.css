@@ -1,4 +1,7 @@
 .App {
   text-align: center;
 }
+#paypal:nth-child(){
+  display: none !important;
+}
 

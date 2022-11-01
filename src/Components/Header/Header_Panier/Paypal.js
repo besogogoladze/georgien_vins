@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartState } from "../../../Context/UseContext";
+import "../../../App.css"
 
 export default function Paypal({ totalPrice, modal }) {
   const { dispatch } = CartState();
@@ -46,7 +47,7 @@ export default function Paypal({ totalPrice, modal }) {
 
   return (
     <div>
-      <div ref={paypal}></div>
+      <div ref={paypal} id="paypal"></div>
     </div>
   );
 }
