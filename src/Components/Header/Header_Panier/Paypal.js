@@ -12,7 +12,6 @@ export default function Paypal({ totalPrice, modal }) {
     window.paypal
       .Buttons({
         createOrder: (data, actions, err) => {
-          console.log(data, actions, err)
           return actions.order.create({
             purchase_units: [
               {
@@ -33,11 +32,11 @@ export default function Paypal({ totalPrice, modal }) {
         onError: (err) => {
           modal(false);
           navigate("/error", { state: { message: "Failed to submit form" } });
-          console.log(err)
+          console.log(err);
         },
       })
       .render(paypal.current);
-  }, [dispatch, modal, navigate, totalPrice]);
+  }, [dispatch, modal, navigate, paypal, totalPrice]);
 
   return (
     <div>

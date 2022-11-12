@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import CartReducer, { productFilterReducer } from "./Reducer";
 
 const Cart = createContext();
@@ -232,7 +227,6 @@ function Context({ children }) {
   //   console.log(productsData);
   // }, []);
   // console.log(productsData);
-  localStorage.setItem("mode", JSON.stringify("light"));
 
   const localData = () => {
     const localData = localStorage.getItem("cart");
@@ -240,6 +234,10 @@ function Context({ children }) {
   };
   const localTheme = () => {
     var localTheme = localStorage.getItem("mode");
+    localTheme === null
+      ? localStorage.setItem("mode", JSON.stringify("light"))
+      : JSON.parse(localTheme);
+
     return localTheme ? JSON.parse(localTheme) : "light";
   };
 

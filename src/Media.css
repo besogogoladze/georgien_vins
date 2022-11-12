@@ -19,6 +19,9 @@
   #panier{
     width: 100% !important;
   }
+  #filter {
+    width: 100% !important;
+  }
 }
 @media only screen and (max-width: 740px) {
   #UpHeader_logo {
@@ -32,7 +35,7 @@
     flex-wrap: wrap;
   }
   #filter {
-    width: 100%;
+    width: 100% !important;
   }
   #filterContainer {
     margin-top: 0 !important;
