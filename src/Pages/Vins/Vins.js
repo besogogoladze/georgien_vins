@@ -3,9 +3,10 @@ import { Container } from "@mui/system";
 import React, { useEffect, useState, useTransition } from "react";
 import { CartState } from "../../Context/UseContext";
 import Filter from "./Filter";
-import Fade from "react-reveal/Fade";
 import Logo from "../../Icons/Logo_SVG.svg";
-import { Flip } from "react-reveal";
+import Fade from "react-awesome-reveal";
+import { Flip } from "react-awesome-reveal";
+import "../home.css";
 const Vins = () => {
   const [loading, startTransition] = useTransition();
   const [state, setState] = useState(null);
@@ -53,7 +54,6 @@ const Vins = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "flex-start",
-        // flexWrap: "wrap",
       }}
     >
       <Filter />
@@ -152,7 +152,7 @@ const Vins = () => {
               />
             </Grid>
           ) : (
-            <Fade left={true} key={index}>
+            <Fade triggerOnce direction="left" key={index}>
               <Grid
                 className={`card`}
                 item
@@ -176,7 +176,12 @@ const Vins = () => {
                 <h3 className={theme}>{i.description}</h3>
                 <h4 className={theme}>{i.price + "€"}</h4>
                 {cart.some((product) => product.id === i.id) ? (
-                  <Flip top collapse when={!show}>
+                  <Flip
+                    triggerOnce
+                    direction="horizontal"
+                    collapse
+                    when={!show}
+                  >
                     <Button
                       variant="contained"
                       color="error"
@@ -191,7 +196,7 @@ const Vins = () => {
                     </Button>
                   </Flip>
                 ) : (
-                  <Flip top>
+                  <Flip direction="vertical" triggerOnce>
                     <Button
                       variant="contained"
                       color="success"

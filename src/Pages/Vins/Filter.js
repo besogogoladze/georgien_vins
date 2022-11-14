@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CartState } from "../../Context/UseContext";
 import { Container } from "@mui/system";
 import Radio from "@mui/material/Radio";
@@ -15,7 +15,7 @@ import {
   FormGroup,
 } from "@mui/material";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const Filter = () => {
   const {

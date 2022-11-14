@@ -37,6 +37,7 @@ function HeaderPanier() {
   const [open, setOpen] = React.useState(false);
   const [isHover, setIsHover] = React.useState(false);
   const [totalPrice, setTotalPrice] = React.useState();
+
   const {
     state: { cart, theme },
     dispatch,
@@ -61,6 +62,14 @@ function HeaderPanier() {
   const handleMouseLeave = () => {
     setIsHover(false);
   };
+
+  // const handleRemoveFromCart = () => {
+  //   setRemoveFromCart(true);
+  //   setTimeout(() => {
+  //     setRemoveFromCart(false);
+  //   }, [1000]);
+  // };
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -77,7 +86,7 @@ function HeaderPanier() {
     <>
       <Button
         style={{
-          backgroundColor: isHover ? "#cda246" : null,
+          backgroundColor: isHover ? "#fff" : null,
         }}
         className={isHover ? " " : theme}
         onMouseEnter={handleMouseEnter}
@@ -86,7 +95,7 @@ function HeaderPanier() {
       >
         <span style={{ marginRight: "5px" }} aria-label="cart">
           <StyledBadge
-            badgeContent={cart.length > 0 ? cart.length : "0"}
+            badgeContent={cart.length > 0 ? cart.length : null}
             color={cart.length > 0 ? "success" : "warning"}
             style={{
               color: isHover ? "#fff" : "#5b011d",
@@ -94,7 +103,7 @@ function HeaderPanier() {
           >
             <ShoppingCartIcon
               color={cart.length > 0 ? "success" : "warning"}
-              style={{ color: isHover ? "#success" : "warning" }}
+              style={{ color: isHover ? "#980433" : "#980433" }}
             />
           </StyledBadge>
         </span>
@@ -108,9 +117,25 @@ function HeaderPanier() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box id="panier" sx={style} className={"modalPanier"}>
+        <Box
+          id="panier"
+          style={{
+            border: `${theme === "light" ? "#fff" : "#980433"} 2px solid`,
+            boxShadow: `5px 5px 20px 0.1px ${
+              theme === "light" ? "#001" : "#980433"
+            }`,
+            backgroundColor: theme === "light" ? "#fff" : "#000",
+          }}
+          sx={style}
+          className={"modalPanier"}
+        >
           <Container>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <Typography
+              style={{ color: theme === "light" ? "#000" : "#980433" }}
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+            >
               Panier
             </Typography>
             {cart.length !== 0 ? (
@@ -128,9 +153,13 @@ function HeaderPanier() {
                         flexWrap: "wrap",
                         justifyContent: "space-around",
                         alignItems: "center",
-                        border: "1px #0001 solid",
+                        border: `1px ${
+                          theme === "light" ? "#000" : "#980433"
+                        } solid`,
                         boxSizing: "border-box",
-                        boxShadow: "2px 2px #0001",
+                        boxShadow: ` ${
+                          theme === "light" ? "1px 1px #000" : "0 0 5px 2px #980433"
+                        }`,
                         padding: "10px 0",
                       }}
                     >
@@ -139,17 +168,35 @@ function HeaderPanier() {
                         src={i.img}
                         alt={i.name}
                       />
-                      <Tooltip title={i.description} style={{ width: "20%" }}>
+                      <Tooltip
+                        title={i.description}
+                        style={{
+                          width: "20%",
+                          color: theme === "light" ? "#000" : "#980433",
+                        }}
+                      >
                         <p>
                           {i.description.split(" ").splice(0, 7).join(" ") +
                             " " +
                             "..."}
                         </p>
                       </Tooltip>
-                      <h3>{i.price + "€"}</h3>
+                      <h3
+                        style={{
+                          color: theme === "light" ? "#000" : "#980433",
+                        }}
+                      >
+                        {i.price + "€"}
+                      </h3>
                       <Box sx={{ minWidth: 120 }}>
                         <FormControl fullWidth>
-                          <InputLabel style={{ color: "#333 !important" }}>
+                          <InputLabel
+                            style={{
+                              color: theme === "light" ? "#000" : "#980433",
+                              borderColor:
+                                theme === "light" ? "#000" : "#980433",
+                            }}
+                          >
                             qty
                           </InputLabel>
                           <Select
@@ -157,6 +204,9 @@ function HeaderPanier() {
                             id="demo-simple-select"
                             value={i.qty}
                             label="qty"
+                            style={{
+                              color: theme === "light" ? "#000" : "#980433",
+                            }}
                             onChange={(e) =>
                               dispatch({
                                 type: "CHANGE_CART_QTY",
@@ -202,7 +252,12 @@ function HeaderPanier() {
                   Clear Cart
                   <DeleteForeverIcon />
                 </Button>
-                <h4 style={{ textAlign: "end" }}>
+                <h4
+                  style={{
+                    textAlign: "end",
+                    color: theme === "light" ? "#000" : "#980433",
+                  }}
+                >
                   Total Price: {totalPrice + "€"}
                 </h4>
               </>
@@ -226,8 +281,8 @@ function HeaderPanier() {
             )}
             {cart.length !== 0 ? (
               <>
-                <Paypal modal={setOpen} totalPrice={totalPrice} />
-                <NavLink onClick={handleClose} to={"/Panier"}>
+                {/* <Paypal modal={setOpen} totalPrice={totalPrice} /> */}
+                <NavLink style={{}} onClick={handleClose} to={"/Panier"}>
                   Afficher le panier
                 </NavLink>
               </>
