@@ -1,15 +1,27 @@
 import { Button, Container, Tooltip, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { CartState } from "../Context/UseContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import PanierImg from "../Icons/panier.png";
 
 const Panier = () => {
-  // const [totalPrice, setTotalPrice] = React.useState();
+  const [totalPrice, setTotalPrice] = React.useState();
   const {
-    state: { cart, theme, totalPrice },
+    state: { cart, theme },
     dispatch,
   } = CartState();
+
+  useEffect(() => {
+    setTotalPrice(
+      cart
+        .reduce(
+          (total, currentValue) =>
+            total + Number(currentValue.price).toFixed(2) * currentValue.qty,
+          0
+        )
+        .toFixed(2)
+    );
+  }, [cart]);
 
   return (
     <div className={theme} style={{paddingTop: '10px'}}>

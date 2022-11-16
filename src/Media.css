@@ -11,12 +11,15 @@
   #BurgerMenu {
     display: block !important;
   }
+  .georgieDescriptionContainer {
+    flex-direction: column;
+  }
 }
 @media only screen and (max-width: 860px) {
   #productsContainer {
     justify-content: center;
   }
-  #panier{
+  #panier {
     width: 100% !important;
   }
   #filter {
@@ -28,6 +31,9 @@
     width: 100%;
     text-align: center;
     margin: 20px 0;
+  }
+  .modalPanier {
+    height: -webkit-fill-available;
   }
 }
 @media only screen and (max-width: 510px) {
@@ -49,6 +55,22 @@
   }
   #soldPack div {
     width: 100% !important;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .georgieDescriptionImg {
+    border-radius: 200 / 2 !important;
+    height: 200px !important;
+    width: 200px !important;
+  }
+  .CepageTitle {
+    flex-direction: column;
+  }
+  .CepageTitle img {
+    align-self: center;
+  }
+  .CepageTitle h1 {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 400px) {

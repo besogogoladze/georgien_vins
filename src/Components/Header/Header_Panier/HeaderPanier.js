@@ -150,93 +150,112 @@ function HeaderPanier() {
                     <div
                       style={{
                         display: "flex",
-                        flexWrap: "wrap",
-                        justifyContent: "space-around",
-                        alignItems: "center",
+                        flexDirection: "column",
                         border: `1px ${
                           theme === "light" ? "#000" : "#980433"
                         } solid`,
                         boxSizing: "border-box",
                         boxShadow: ` ${
-                          theme === "light" ? "1px 1px #000" : "0 0 5px 2px #980433"
+                          theme === "light"
+                            ? "1px 1px #000"
+                            : "0 0 5px 2px #980433"
                         }`,
                         padding: "10px 0",
                       }}
                     >
-                      <img
-                        style={{ width: "120px", padding: "5px" }}
-                        src={i.img}
-                        alt={i.name}
-                      />
-                      <Tooltip
-                        title={i.description}
+                      <div
                         style={{
-                          width: "20%",
-                          color: theme === "light" ? "#000" : "#980433",
+                          display: "flex",
+                          flexWrap: "wrap",
+                          justifyContent: "space-around",
+                          alignItems: "center",
                         }}
                       >
-                        <p>
-                          {i.description.split(" ").splice(0, 7).join(" ") +
-                            " " +
-                            "..."}
-                        </p>
-                      </Tooltip>
-                      <h3
+                        <img
+                          style={{ width: "120px", padding: "5px" }}
+                          src={i.img}
+                          alt={i.name}
+                        />
+                        <Tooltip
+                          title={i.description}
+                          style={{
+                            width: "20%",
+                            color: theme === "light" ? "#000" : "#980433",
+                          }}
+                        >
+                          <p>
+                            {i.description.split(" ").splice(0, 7).join(" ") +
+                              " " +
+                              "..."}
+                          </p>
+                        </Tooltip>
+                        <h3
+                          style={{
+                            color: theme === "light" ? "#000" : "#980433",
+                          }}
+                        >
+                          {i.price + "€"}
+                        </h3>
+                        <Box sx={{ minWidth: 120 }}>
+                          <FormControl fullWidth>
+                            <InputLabel
+                              style={{
+                                color: theme === "light" ? "#000" : "#980433",
+                                borderColor:
+                                  theme === "light" ? "#000" : "#980433",
+                              }}
+                            >
+                              qty
+                            </InputLabel>
+                            <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              value={i.qty}
+                              label="qty"
+                              style={{
+                                color: theme === "light" ? "#000" : "#980433",
+                              }}
+                              onChange={(e) =>
+                                dispatch({
+                                  type: "CHANGE_CART_QTY",
+                                  payload: {
+                                    id: i.id,
+                                    qty: e.target.value,
+                                  },
+                                })
+                              }
+                            >
+                              {[...Array(i.inStock).keys()].map((x) => (
+                                <MenuItem value={x + 1} key={x + 1}>
+                                  {x + 1}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </FormControl>
+                        </Box>
+                      </div>
+                      <Container
                         style={{
-                          color: theme === "light" ? "#000" : "#980433",
+                          textAlign: "end",
                         }}
                       >
-                        {i.price + "€"}
-                      </h3>
-                      <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                          <InputLabel
-                            style={{
-                              color: theme === "light" ? "#000" : "#980433",
-                              borderColor:
-                                theme === "light" ? "#000" : "#980433",
-                            }}
-                          >
-                            qty
-                          </InputLabel>
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={i.qty}
-                            label="qty"
-                            style={{
-                              color: theme === "light" ? "#000" : "#980433",
-                            }}
-                            onChange={(e) =>
-                              dispatch({
-                                type: "CHANGE_CART_QTY",
-                                payload: {
-                                  id: i.id,
-                                  qty: e.target.value,
-                                },
-                              })
-                            }
-                          >
-                            {[...Array(i.inStock).keys()].map((x) => (
-                              <MenuItem value={x + 1} key={x + 1}>
-                                {x + 1}
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                      <Button
-                        variant="contained"
-                        color="error"
-                        onClick={() => {
-                          dispatch({
-                            type: "REMOVE_FROM_CART",
-                            payload: i,
-                          });
-                        }}
-                      >
-                        <DeleteForeverIcon />
-                      </Button>
+                        <Button
+                          style={{
+                            textAlign: "end",
+                            width: "20%",
+                          }}
+                          variant="contained"
+                          color="error"
+                          onClick={() => {
+                            dispatch({
+                              type: "REMOVE_FROM_CART",
+                              payload: i,
+                            });
+                          }}
+                        >
+                          <DeleteForeverIcon />
+                        </Button>
+                      </Container>
                     </div>
                   </div>
                 ))}
