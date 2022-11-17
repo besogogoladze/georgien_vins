@@ -16,9 +16,9 @@ const Footer = () => {
       style={{
         backgroundColor: theme === "light" ? "#fff" : "rgb(10, 12, 11)",
         borderTop: "5px #333 solid",
-        borderRadius: "1rem 1rem 0 0",
+        borderRadius: theme === "light" ? "1rem 1rem 0 0" : "0",
         boxSizing: "border-box",
-        boxShadow: theme === "light" ? "2px 0 10px #000" : "2px 0 10px #980433",
+        boxShadow: "2px 0 10px #000",
       }}
     >
       <Container
