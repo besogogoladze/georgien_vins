@@ -12,9 +12,9 @@ const Nav = () => {
     <ul
       id="Navigation"
       style={{
-        boxShadow: theme === "light" ? "0 0 1px #090d2a" : "0 0 15px #fff",
-        borderTop: "1px #fff solid",
-        borderBottom: "1px #fff solid",
+        boxShadow: theme === "light" ? "0 0 15px #fff" : "0 0 15px #fff",
+        borderTop: theme === "light" ? "1px #fff solid" : "1px #333 solid",
+        borderBottom: theme === "light" ? "1px #fff solid" : "1px #333 solid",
         position: "relative",
         display: "flex",
         justifyContent: "space-around",

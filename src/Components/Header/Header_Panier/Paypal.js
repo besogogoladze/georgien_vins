@@ -37,10 +37,11 @@ export default function Paypal({ totalPrice, modal }) {
       })
       .render(paypal.current);
   }, [dispatch, modal, navigate, paypal, totalPrice]);
+  console.log(paypal.current);
 
   return (
     <div>
-      <div ref={paypal} id="paypal"></div>
+      <div style={{ textAlign: "center" }} ref={paypal} id="paypal"></div>
     </div>
   );
 }

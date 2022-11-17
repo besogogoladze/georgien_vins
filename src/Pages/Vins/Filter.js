@@ -35,7 +35,6 @@ const Filter = () => {
           marginTop: "80px",
           paddingTop: "10px",
           paddingBottom: "80px",
-          // backgroundColor: "#343a40",
           color: theme === "light" ? "#000" : "#980433",
           gap: "20px",
         }}
@@ -43,7 +42,7 @@ const Filter = () => {
         <Accordion
           style={{
             width: "100%",
-            backgroundColor: "transparent",
+            backgroundColor: theme === "light" ? "transparent" : "#333",
             cursor: "pointer",
           }}
         >

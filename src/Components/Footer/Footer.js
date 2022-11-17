@@ -15,7 +15,10 @@ const Footer = () => {
     <div
       style={{
         backgroundColor: theme === "light" ? "#fff" : "rgb(10, 12, 11)",
-        borderTop: "1px #333 solid",
+        borderTop: "15px #333 dashed",
+        borderRadius: "2rem 2rem 0 0",
+        boxSizing: "border-box",
+        boxShadow: theme === "light" ? "2px 0 20px #000" : "2px 0 20px #980433",
       }}
     >
       <Container
@@ -132,9 +135,27 @@ const Footer = () => {
               flexWrap: "wrap",
             }}
           >
-            <img style={{ width: "100px" }} src={DHL} alt="DHL" />
-            <img style={{ width: "80px" }} src={DPD} alt="DPD" />
-            <img style={{ width: "60px" }} src={UPS} alt="UPS" />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.dhlexpress.fr"
+            >
+              <img style={{ width: "100px" }} src={DHL} alt="DHL" />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.dpd.com/fr/fr/"
+            >
+              <img style={{ width: "80px" }} src={DPD} alt="DPD" />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.ups.com/fr/fr/"
+            >
+              <img style={{ width: "60px" }} src={UPS} alt="UPS" />
+            </a>
           </div>
         </div>
       </Container>

@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Tooltip } from "@mui/material";
 import Zoom from "@mui/material/Zoom";
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
-import "./UpHeader.css";
 import { CartState } from "../../Context/UseContext";
 import { ReactComponent as Logo } from "../../Icons/Logo_SVG.svg";
 import { styled } from "@mui/material/styles";
@@ -79,7 +78,7 @@ function UpHeader() {
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          flexWrap: 'wrap'
+          flexWrap: "wrap",
         }}
       >
         <Tooltip
