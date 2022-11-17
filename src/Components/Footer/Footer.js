@@ -15,10 +15,10 @@ const Footer = () => {
     <div
       style={{
         backgroundColor: theme === "light" ? "#fff" : "rgb(10, 12, 11)",
-        borderTop: "15px #333 dashed",
-        borderRadius: "2rem 2rem 0 0",
+        borderTop: "5px #333 solid",
+        borderRadius: "1rem 1rem 0 0",
         boxSizing: "border-box",
-        boxShadow: theme === "light" ? "2px 0 20px #000" : "2px 0 20px #980433",
+        boxShadow: theme === "light" ? "2px 0 10px #000" : "2px 0 10px #980433",
       }}
     >
       <Container
