@@ -11,6 +11,7 @@ import Georgie from "./Pages/Georgie/Georgie";
 import Histoire from "./Pages/Georgie/Histoire/Histoire";
 import Cepages from "./Pages/Georgie/Cepages/Cepages";
 import Qvevri from "./Pages/Georgie/Qvevri/Qvevri";
+import Error from "./Pages/Error/Error";
 const Home = lazy(() => import("./Pages/Home"));
 const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
 const Product = lazy(() => import("./Pages/Product"));
@@ -48,13 +49,14 @@ function App() {
                 exact
                 element={<ProfilPersonnel />}
               />
-              <Route path="/:id" element={<Product />} />
+              <Route path="/georgien_vins/:id" element={<Product />} />
               <Route path="/Panier" element={<Panier />} />
               <Route path="/SPIRITUEUX" element={<Spiritueux />} />
               <Route path="/GEORGIE" element={<Georgie />} />
               <Route path="/GEORGIE/Histoire" element={<Histoire />} />
               <Route path="/GEORGIE/Cepages" element={<Cepages />} />
               <Route path="/GEORGIE/Qvevri" element={<Qvevri />} />
+              <Route path="*" element={<Error />} />
               {/* <Route path="/adminPosts/:id" element={<RemovePost />} /> */}
               {/* <Route path="/Boovies/MoviesList/:page?" exact component={Movies} /> */}
               {/* <Route path="/Boovies/Search/:page?" exact component= {Search}/> */}

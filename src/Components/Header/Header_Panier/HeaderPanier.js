@@ -18,7 +18,7 @@ import {
   Select,
   Tooltip,
 } from "@mui/material";
-import Paypal from "./Paypal";
+import PaypalCheckoutButton from "../../Paypal/PaypalCheckoutButton";
 
 const style = {
   position: "absolute",
@@ -62,13 +62,6 @@ function HeaderPanier() {
   const handleMouseLeave = () => {
     setIsHover(false);
   };
-
-  // const handleRemoveFromCart = () => {
-  //   setRemoveFromCart(true);
-  //   setTimeout(() => {
-  //     setRemoveFromCart(false);
-  //   }, [1000]);
-  // };
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -311,14 +304,18 @@ function HeaderPanier() {
                   Clear Cart
                   <DeleteForeverIcon />
                 </Button>
-                <h4
-                  style={{
-                    textAlign: "end",
-                    color: theme === "light" ? "#000" : "#980433",
-                  }}
-                >
-                  Total Price: {totalPrice + "€"}
-                </h4>
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <h4
+                    style={{
+                      color: theme === "light" ? "#000" : "#980433",
+                      border: "2px #333 solid",
+                      borderRadius: "2rem",
+                      padding: "10px",
+                    }}
+                  >
+                    {totalPrice + "€"}
+                  </h4>
+                </div>
               </>
             ) : (
               <Container
@@ -340,7 +337,20 @@ function HeaderPanier() {
             )}
             {cart.length !== 0 ? (
               <>
-                <Paypal modal={setOpen} totalPrice={totalPrice} />
+                <div
+                  className="paypal-button-container"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    margin: "50px 0",
+                  }}
+                >
+                  <PaypalCheckoutButton
+                    modal={setOpen}
+                    totalPrice={totalPrice}
+                  />
+                </div>
                 <NavLink style={{}} onClick={handleClose} to={"/Panier"}>
                   Afficher le panier
                 </NavLink>

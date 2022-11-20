@@ -6,16 +6,27 @@ import "./Media.css";
 import { BrowserRouter } from "react-router-dom";
 import Auth0ProviderWithHistory from "./Auth/AuthProvider";
 import Context from "./Context/UseContext";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Context>
-      <Auth0ProviderWithHistory>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Auth0ProviderWithHistory>
+      <PayPalScriptProvider
+        options={{
+          "client-id":
+            "AT0Nob7qpyjHbNquFhdtXwISfAIu37d3JvO1rTGjly9HH-J2aFZJ_pr8RrPeDN2_rFVSnq3QBFEtygCt",
+          currency: "EUR",
+          locale: "fr_FR",
+          "enable-funding": "paylater",
+        }}
+      >
+        <Auth0ProviderWithHistory>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Auth0ProviderWithHistory>
+      </PayPalScriptProvider>
     </Context>
-  </React.StrictMode>
+  </React.Fragment>
 );
