@@ -14,6 +14,10 @@
   .georgieDescriptionContainer {
     flex-direction: column;
   }
+  .error_404 {
+    width: 100%;
+    text-align: end;
+  }
 }
 @media only screen and (max-width: 860px) {
   #productsContainer {
@@ -34,6 +38,9 @@
   }
   .modalPanier {
     height: -webkit-fill-available;
+  }
+  .error_404 {
+    font-size: 10rem !important;
   }
 }
 @media only screen and (max-width: 510px) {
@@ -76,5 +83,12 @@
 @media only screen and (max-width: 400px) {
   .card {
     flex: unset;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .error_404 {
+    font-size: 5rem !important;
+    width: 100%;
+    text-align: end;
   }
 }

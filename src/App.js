@@ -12,6 +12,8 @@ import Histoire from "./Pages/Georgie/Histoire/Histoire";
 import Cepages from "./Pages/Georgie/Cepages/Cepages";
 import Qvevri from "./Pages/Georgie/Qvevri/Qvevri";
 import Error from "./Pages/Error/Error";
+import { Stack } from "@mui/system";
+import { Alert } from "@mui/material";
 const Home = lazy(() => import("./Pages/Home"));
 const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
 const Product = lazy(() => import("./Pages/Product"));
@@ -22,12 +24,34 @@ const Spiritueux = lazy(() => import("./Pages/Spiritueux/Spiritueux"));
 function App() {
   const [loading, startTransition] = useTransition();
   const [state, setState] = useState(null);
+  const [offline, setOffline] = useState(false);
 
   useEffect(() => {
+    window.addEventListener("offline", () => {
+      setOffline(
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert severity="error">You are Offline!!!</Alert>
+        </Stack>
+      );
+      setTimeout(() => {
+        setOffline(false);
+      }, 3000);
+    });
+    window.addEventListener("online", (event) => {
+      setOffline(
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert severity="success">You are back Online!!!</Alert>
+        </Stack>
+      );
+      setTimeout(() => {
+        setOffline(false);
+      }, 3000);
+    });
     startTransition(() => {
       setState(true);
     }, []);
   }, [state]);
+  console.log(offline);
 
   const {
     state: { theme },
@@ -81,6 +105,7 @@ function App() {
             });
           }}
         />
+        {offline ? offline : null}
       </span>
     </Suspense>
   );
