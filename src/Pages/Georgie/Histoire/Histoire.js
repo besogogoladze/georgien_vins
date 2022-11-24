@@ -2,14 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Container } from "@mui/system";
 import "../Georgie.css";
 import { Fade } from "react-awesome-reveal";
-import Vin_De_Georgie from "../../../Icons/vin_de_georgie.jpg";
 import Raisin_De_Georgie from "../../../Icons/vin-georgie-raisin.jpg";
 import Raisin_De_Georgie2 from "../../../Icons/vin-georgie-raisin2.jpg";
 import { CartState } from "../../../Context/UseContext";
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import { NavLink } from "react-router-dom";
 
 function Histoire() {
   const [loading, setLoading] = useState(false);
+
+  function handleClick(event) {
+    event.preventDefault();
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -29,7 +35,40 @@ function Histoire() {
               </h1>
             </Container>
           </div>
-          <Container style={{ marginBottom: "100px" }}>
+          <Container style={{ padding: "50px 0" }}>
+            <div
+              style={{ padding: "0 0 50px 0" }}
+              role="presentation"
+              onClick={handleClick}
+            >
+              <Breadcrumbs
+                separator={
+                  <ArrowForwardIosRoundedIcon
+                    style={{
+                      fontSize: "15px",
+                      color: theme === "light" ? "#000" : "#fff",
+                    }}
+                  />
+                }
+                aria-label="breadcrumb"
+              >
+                <NavLink
+                  style={{
+                    color: theme === "light" ? "#000" : "#fff",
+                    textDecoration: "underline",
+                  }}
+                  to="/GEORGIE"
+                >
+                  GEORGIE
+                </NavLink>
+                <Typography
+                  color={theme === "light" ? "#000" : "#fff"}
+                  aria-current="page"
+                >
+                  HISTOIRE
+                </Typography>
+              </Breadcrumbs>
+            </div>
             <div
               style={{
                 display: "flex",

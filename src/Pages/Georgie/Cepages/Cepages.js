@@ -1,4 +1,4 @@
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -9,6 +9,8 @@ import Cépage_Blanc from "../../../Icons/cépage-blanc.jpg";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import map_de_georgie from "../../../Icons/map_de_georgie.jpg";
 import { Slide } from "react-awesome-reveal";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 function Cepages() {
   const [loading, setLoading] = useState(false);
 
@@ -18,6 +20,10 @@ function Cepages() {
   const {
     state: { theme },
   } = CartState();
+
+  function handleClick(event) {
+    event.preventDefault();
+  }
   return (
     <>
       {loading ? (
@@ -31,6 +37,39 @@ function Cepages() {
           </div>
           <Slide>
             <Container style={{ padding: "50px 0" }}>
+              <div
+                style={{ padding: "0 0 50px 0" }}
+                role="presentation"
+                onClick={handleClick}
+              >
+                <Breadcrumbs
+                  separator={
+                    <ArrowForwardIosRoundedIcon
+                      style={{
+                        fontSize: "15px",
+                        color: theme === "light" ? "#000" : "#fff",
+                      }}
+                    />
+                  }
+                  aria-label="breadcrumb"
+                >
+                  <NavLink
+                    style={{
+                      color: theme === "light" ? "#000" : "#fff",
+                      textDecoration: "underline",
+                    }}
+                    to="/GEORGIE"
+                  >
+                    GEORGIE
+                  </NavLink>
+                  <Typography
+                    color={theme === "light" ? "#000" : "#fff"}
+                    aria-current="page"
+                  >
+                    CEPAGES
+                  </Typography>
+                </Breadcrumbs>
+              </div>
               <div className="georgieDescription">
                 <p>
                   Le caractère unique du vin de Géorgie est conditionné, outre

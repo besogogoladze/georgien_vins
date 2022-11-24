@@ -33,25 +33,18 @@ function App() {
           <Alert severity="error">You are Offline!!!</Alert>
         </Stack>
       );
-      setTimeout(() => {
-        setOffline(false);
-      }, 3000);
     });
-    window.addEventListener("online", (event) => {
+    window.addEventListener("online", () => {
       setOffline(
         <Stack sx={{ width: "100%" }} spacing={2}>
           <Alert severity="success">You are back Online!!!</Alert>
         </Stack>
       );
-      setTimeout(() => {
-        setOffline(false);
-      }, 3000);
     });
     startTransition(() => {
       setState(true);
     }, []);
   }, [state]);
-  console.log(offline);
 
   const {
     state: { theme },
@@ -105,7 +98,13 @@ function App() {
             });
           }}
         />
-        {offline ? offline : null}
+        {offline ? (
+          <div
+            style={{ position: "fixed", bottom: "0", borderRadius: "20rem" }}
+          >
+            {offline}
+          </div>
+        ) : null}
       </span>
     </Suspense>
   );

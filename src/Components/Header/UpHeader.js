@@ -10,7 +10,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { NavLink } from "react-router-dom";
 import MonCompte from "./Header_mon_compte/MonCompte";
-import Search from "./Header_Search/Search";
 import HeaderPanier from "./Header_Panier/HeaderPanier";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -121,7 +120,6 @@ function UpHeader() {
             />
           </FormGroup>
           <MonCompte />
-          {/* <Search /> */}
           <div
             style={{
               color: theme === "light" ? "#fff" : "",
