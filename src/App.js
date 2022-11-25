@@ -40,6 +40,9 @@ function App() {
           <Alert severity="success">You are back Online!!!</Alert>
         </Stack>
       );
+      setTimeout(() => {
+        setOffline(false);
+      }, [5000]);
     });
     startTransition(() => {
       setState(true);
