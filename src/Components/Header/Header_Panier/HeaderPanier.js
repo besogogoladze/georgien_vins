@@ -19,6 +19,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import PaypalCheckoutButton from "../../Paypal/PaypalCheckoutButton";
+import "../../../Media.css";
 
 const style = {
   position: "absolute",
@@ -146,195 +147,220 @@ function HeaderPanier() {
             >
               Panier
             </Typography>
-            {cart.length !== 0 ? (
-              <>
-                {cart?.map((i, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      margin: "10px 0",
-                    }}
-                  >
+            <div className="topOfPanier">
+              {cart.length !== 0 ? (
+                <>
+                  {cart?.map((i, index) => (
                     <div
+                      key={index}
                       style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        border: `1px ${
-                          theme === "light" ? "#000" : "#980433"
-                        } solid`,
-                        boxSizing: "border-box",
-                        boxShadow: ` ${
-                          theme === "light"
-                            ? "1px 1px #000"
-                            : "0 0 5px 2px #980433"
-                        }`,
-                        padding: "10px 0",
+                        margin: "10px 0",
                       }}
+                      className="mainPanier"
                     >
-                      <Container>
-                        <div
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                          }}
-                        >
-                          <img
-                            style={{ width: "120px", padding: "5px" }}
-                            src={i.img}
-                            alt={i.name}
-                          />
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          border: `1px ${
+                            theme === "light" ? "#000" : "#980433"
+                          } solid`,
+                          boxSizing: "border-box",
+                          boxShadow: ` ${
+                            theme === "light"
+                              ? "1px 1px #000"
+                              : "0 0 5px 2px #980433"
+                          }`,
+                          padding: "10px 0",
+                        }}
+                      >
+                        <Container>
                           <div
+                            className="headPanier"
                             style={{
                               display: "flex",
-                              width: "70%",
-                              flexDirection: "column",
-                              gap: "20px",
+                              flexWrap: "wrap",
+                              justifyContent: "space-between",
+                              alignItems: "center",
                             }}
                           >
-                            <Tooltip
-                              title={i.description}
-                              style={{
-                                width: "100%",
-                                color: theme === "light" ? "#000" : "#980433",
-                              }}
-                            >
-                              <p>
-                                {i.description
-                                  .split(" ")
-                                  .splice(0, 7)
-                                  .join(" ") +
-                                  " " +
-                                  "..."}
-                              </p>
-                            </Tooltip>
+                            <img
+                              style={{ width: "120px", padding: "5px" }}
+                              src={i.img}
+                              alt={i.name}
+                            />
                             <div
                               style={{
                                 display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                                flexWrap: "wrap",
+                                width: "70%",
+                                flexDirection: "column",
+                                gap: "20px",
                               }}
+                              className="descriptionPanier"
                             >
-                              <h3
+                              <Tooltip
+                                title={i.description}
                                 style={{
+                                  width: "100%",
                                   color: theme === "light" ? "#000" : "#980433",
                                 }}
                               >
-                                {i.price + "€"}
-                              </h3>
-                              <Box id="modalBox" sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                  <InputLabel
-                                    style={{
-                                      color:
-                                        theme === "light" ? "#000" : "#980433",
-                                      borderColor:
-                                        theme === "light" ? "#000" : "#980433",
-                                    }}
-                                  >
-                                    qty
-                                  </InputLabel>
-                                  <StyledFieldset
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={i.qty}
-                                    label="qty"
-                                    style={{
-                                      color:
-                                        theme === "light" ? "#000" : "#980433",
-                                    }}
-                                    onChange={(e) =>
-                                      dispatch({
-                                        type: "CHANGE_CART_QTY",
-                                        payload: {
-                                          id: i.id,
-                                          qty: e.target.value,
-                                        },
-                                      })
-                                    }
-                                  >
-                                    {[...Array(i.inStock).keys()].map((x) => (
-                                      <MenuItem value={x + 1} key={x + 1}>
-                                        {x + 1}
-                                      </MenuItem>
-                                    ))}
-                                  </StyledFieldset>
-                                </FormControl>
-                              </Box>
+                                <p>
+                                  {i.description
+                                    .split(" ")
+                                    .splice(0, 7)
+                                    .join(" ") +
+                                    " " +
+                                    "..."}
+                                </p>
+                              </Tooltip>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  flexWrap: "wrap",
+                                }}
+                              >
+                                <h3
+                                  style={{
+                                    color:
+                                      theme === "light" ? "#000" : "#980433",
+                                  }}
+                                >
+                                  {i.price + "€"}
+                                </h3>
+                                <Box id="modalBox" sx={{ minWidth: 120 }}>
+                                  <FormControl fullWidth>
+                                    <InputLabel
+                                      style={{
+                                        color:
+                                          theme === "light"
+                                            ? "#000"
+                                            : "#980433",
+                                        borderColor:
+                                          theme === "light"
+                                            ? "#000"
+                                            : "#980433",
+                                      }}
+                                    >
+                                      qty
+                                    </InputLabel>
+                                    <StyledFieldset
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={i.qty}
+                                      label="qty"
+                                      style={{
+                                        color:
+                                          theme === "light"
+                                            ? "#000"
+                                            : "#980433",
+                                      }}
+                                      onChange={(e) =>
+                                        dispatch({
+                                          type: "CHANGE_CART_QTY",
+                                          payload: {
+                                            id: i.id,
+                                            qty: e.target.value,
+                                          },
+                                        })
+                                      }
+                                    >
+                                      {[...Array(i.inStock).keys()].map((x) => (
+                                        <MenuItem value={x + 1} key={x + 1}>
+                                          {x + 1}
+                                        </MenuItem>
+                                      ))}
+                                    </StyledFieldset>
+                                  </FormControl>
+                                </Box>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Container>
-                      <Container
-                        style={{
-                          textAlign: "end",
-                        }}
-                      >
-                        <Button
+                        </Container>
+                        <Container
                           style={{
                             textAlign: "end",
-                            width: "20%",
                           }}
-                          variant="contained"
-                          color="error"
-                          onClick={() => {
-                            dispatch({
-                              type: "REMOVE_FROM_CART",
-                              payload: i,
-                            });
-                          }}
+                          className="removeItemsFromPanier"
                         >
-                          <DeleteForeverIcon />
-                        </Button>
-                      </Container>
+                          <Button
+                            style={{
+                              textAlign: "end",
+                              width: "20%",
+                            }}
+                            variant="contained"
+                            color="error"
+                            onClick={() => {
+                              dispatch({
+                                type: "REMOVE_FROM_CART",
+                                payload: i,
+                              });
+                            }}
+                          >
+                            <DeleteForeverIcon />
+                          </Button>
+                        </Container>
+                      </div>
                     </div>
-                  </div>
-                ))}
-                <Button
-                  variant="contained"
-                  color="error"
-                  onClick={() => {
-                    dispatch({
-                      type: "CLEAR_CART",
-                    });
-                  }}
-                >
-                  Clear Cart
-                  <DeleteForeverIcon />
-                </Button>
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                  <h4
+                  ))}
+                  <div
                     style={{
-                      color: theme === "light" ? "#000" : "#980433",
-                      border: "2px #333 solid",
-                      borderRadius: "2rem",
-                      padding: "10px",
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      flexWrap: "wrap",
                     }}
                   >
-                    {totalPrice + "€"}
-                  </h4>
-                </div>
-              </>
-            ) : (
-              <Container
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  style={{ width: "70%" }}
-                  src={Panier}
-                  alt="Votre panier est vide!!"
-                />
-                <Typography style={{ textAlign: "center" }}>
-                  Votre Panier est vide!!!
-                </Typography>
-              </Container>
-            )}
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={() => {
+                        dispatch({
+                          type: "CLEAR_CART",
+                        });
+                      }}
+                    >
+                      Clear Cart
+                      <DeleteForeverIcon />
+                    </Button>
+                    <div
+                      style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
+                      <h4
+                        style={{
+                          color: theme === "light" ? "#000" : "#980433",
+                          border: "2px #333 solid",
+                          borderRadius: "2rem",
+                          padding: "10px",
+                        }}
+                      >
+                        {totalPrice + "€"}
+                      </h4>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Container
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    style={{ width: "70%" }}
+                    src={Panier}
+                    alt="Votre panier est vide!!"
+                  />
+                  <Typography style={{ textAlign: "center" }}>
+                    Votre Panier est vide!!!
+                  </Typography>
+                </Container>
+              )}
+            </div>
             {cart.length !== 0 ? (
               <>
                 <div

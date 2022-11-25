@@ -19,6 +19,11 @@
     text-align: end;
   }
 }
+@media only screen and (max-width: 1020px) {
+  #panier {
+    width: 80%;
+  }
+}
 @media only screen and (max-width: 860px) {
   #productsContainer {
     justify-content: center;
@@ -43,10 +48,30 @@
     font-size: 10rem !important;
   }
 }
-@media only screen and (max-width: 510px) {
+@media only screen and (max-width: 580px) {
+  .descriptionPanier {
+    width: 100% !important;
+  }
+  .removeItemsFromPanier {
+    padding: 15px;
+  }
+  .headPanier {
+    justify-content: center !important;
+  }
   #VinsPage {
     flex-wrap: wrap;
   }
+  .mainPanier {
+    width: 100% !important;
+  }
+  .topOfPanier {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 510px) {
   #filter {
     width: 100% !important;
   }

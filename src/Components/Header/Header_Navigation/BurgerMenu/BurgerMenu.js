@@ -226,7 +226,7 @@ const BurgerMenu = () => {
             style={{ color: theme === "light" ? "#fff" : "#980433" }}
             onClick={toggleDrawer(anchor, true)}
           >
-            <MenuIcon style={{ fontSize: "30px", marginLeft: "20px" }} />
+            <MenuIcon style={{ fontSize: "30px" }} />
           </Button>
           <SwipeableDrawer
             anchor={anchor}

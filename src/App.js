@@ -30,14 +30,18 @@ function App() {
     window.addEventListener("offline", () => {
       setOffline(
         <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert className="offlineTheme" severity="error">You are Offline!!!</Alert>
+          <Alert className="offlineTheme" severity="error">
+            You are Offline!!!
+          </Alert>
         </Stack>
       );
     });
     window.addEventListener("online", () => {
       setOffline(
         <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert className="offlineTheme" severity="success">You are back Online!!!</Alert>
+          <Alert className="offlineTheme" severity="success">
+            You are back Online!!!
+          </Alert>
         </Stack>
       );
       setTimeout(() => {
@@ -103,7 +107,12 @@ function App() {
         />
         {offline ? (
           <div
-            style={{ position: "fixed", bottom: "0", borderRadius: "20rem" }}
+            style={{
+              position: "fixed",
+              bottom: "0",
+              borderRadius: "20rem",
+              zIndex: "1000",
+            }}
           >
             {offline}
           </div>
