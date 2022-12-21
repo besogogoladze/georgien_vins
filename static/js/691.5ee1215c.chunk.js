@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkvinsgeorgien=self.webpackChunkvinsgeorgien||[]).push([[691],{5691:function(n,e,u){u.r(e),u.d(e,{default:function(){return r}});u(2791),u(3946);var i=u(184),r=function(){return(0,i.jsx)("div",{})}}}]);
-//# sourceMappingURL=691.5ee1215c.chunk.js.map

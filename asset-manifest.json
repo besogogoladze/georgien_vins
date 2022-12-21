@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/georgien_vins/static/css/main.59e7f733.css",
-    "main.js": "/georgien_vins/static/js/main.0b0ab08e.js",
+    "main.css": "/georgien_vins/static/css/main.049a97a0.css",
+    "main.js": "/georgien_vins/static/js/main.e668b591.js",
     "static/css/541.c0a9ad3c.chunk.css": "/georgien_vins/static/css/541.c0a9ad3c.chunk.css",
     "static/js/541.09cfa9d6.chunk.js": "/georgien_vins/static/js/541.09cfa9d6.chunk.js",
-    "static/js/819.63812cfc.chunk.js": "/georgien_vins/static/js/819.63812cfc.chunk.js",
+    "static/js/819.05297a3b.chunk.js": "/georgien_vins/static/js/819.05297a3b.chunk.js",
     "static/js/957.7cc1bf34.chunk.js": "/georgien_vins/static/js/957.7cc1bf34.chunk.js",
-    "static/js/934.31fe2743.chunk.js": "/georgien_vins/static/js/934.31fe2743.chunk.js",
+    "static/js/934.7dd83117.chunk.js": "/georgien_vins/static/js/934.7dd83117.chunk.js",
     "static/css/335.17da83b9.chunk.css": "/georgien_vins/static/css/335.17da83b9.chunk.css",
     "static/js/335.03e90bec.chunk.js": "/georgien_vins/static/js/335.03e90bec.chunk.js",
-    "static/js/691.5ee1215c.chunk.js": "/georgien_vins/static/js/691.5ee1215c.chunk.js",
     "static/js/588.5466885d.chunk.js": "/georgien_vins/static/js/588.5466885d.chunk.js",
     "static/js/560.33399fd8.chunk.js": "/georgien_vins/static/js/560.33399fd8.chunk.js",
     "static/media/slide_1.jpg": "/georgien_vins/static/media/slide_1.f5b9d76f6054c7690ebd.jpg",
@@ -42,21 +41,20 @@
     "static/media/Logo_SVG.svg": "/georgien_vins/static/media/Logo_SVG.d08d0e3c59011751972a17fef652213c.svg",
     "static/media/georgian_sun.jfif": "/georgien_vins/static/media/georgian_sun.dc498128180bffe7b690.jfif",
     "index.html": "/georgien_vins/index.html",
-    "main.59e7f733.css.map": "/georgien_vins/static/css/main.59e7f733.css.map",
-    "main.0b0ab08e.js.map": "/georgien_vins/static/js/main.0b0ab08e.js.map",
+    "main.049a97a0.css.map": "/georgien_vins/static/css/main.049a97a0.css.map",
+    "main.e668b591.js.map": "/georgien_vins/static/js/main.e668b591.js.map",
     "541.c0a9ad3c.chunk.css.map": "/georgien_vins/static/css/541.c0a9ad3c.chunk.css.map",
     "541.09cfa9d6.chunk.js.map": "/georgien_vins/static/js/541.09cfa9d6.chunk.js.map",
-    "819.63812cfc.chunk.js.map": "/georgien_vins/static/js/819.63812cfc.chunk.js.map",
+    "819.05297a3b.chunk.js.map": "/georgien_vins/static/js/819.05297a3b.chunk.js.map",
     "957.7cc1bf34.chunk.js.map": "/georgien_vins/static/js/957.7cc1bf34.chunk.js.map",
-    "934.31fe2743.chunk.js.map": "/georgien_vins/static/js/934.31fe2743.chunk.js.map",
+    "934.7dd83117.chunk.js.map": "/georgien_vins/static/js/934.7dd83117.chunk.js.map",
     "335.17da83b9.chunk.css.map": "/georgien_vins/static/css/335.17da83b9.chunk.css.map",
     "335.03e90bec.chunk.js.map": "/georgien_vins/static/js/335.03e90bec.chunk.js.map",
-    "691.5ee1215c.chunk.js.map": "/georgien_vins/static/js/691.5ee1215c.chunk.js.map",
     "588.5466885d.chunk.js.map": "/georgien_vins/static/js/588.5466885d.chunk.js.map",
     "560.33399fd8.chunk.js.map": "/georgien_vins/static/js/560.33399fd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59e7f733.css",
-    "static/js/main.0b0ab08e.js"
+    "static/css/main.049a97a0.css",
+    "static/js/main.e668b591.js"
   ]
 }
