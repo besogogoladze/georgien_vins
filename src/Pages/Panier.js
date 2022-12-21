@@ -1,8 +1,19 @@
-import { Button, Container, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import React, { useEffect } from "react";
 import { CartState } from "../Context/UseContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import PanierImg from "../Icons/panier.png";
+import { styled } from "@mui/material/styles";
+import { Select } from "@mui/material";
 
 const Panier = () => {
   const [totalPrice, setTotalPrice] = React.useState();
@@ -22,9 +33,20 @@ const Panier = () => {
         .toFixed(2)
     );
   }, [cart]);
+  const StyledFieldset = styled(Select)(() => ({
+    "& .css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+      borderColor: theme === "light" ? "#000 !important" : "#980433 !important",
+    },
+    "& .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
+      color: theme === "light" ? "#000" : "#980433",
+    },
+    "& .css-bpeome-MuiSvgIcon-root-MuiSelect-icon": {
+      color: theme === "light" ? "#000" : "#980433",
+    },
+  }));
 
   return (
-    <div className={theme} style={{paddingTop: '10px'}}>
+    <div className={theme} style={{ padding: "50px 0" }}>
       <Container>
         {cart.length > 0 ? (
           <>
@@ -41,9 +63,11 @@ const Panier = () => {
                     flexWrap: "wrap",
                     justifyContent: "space-around",
                     alignItems: "center",
-                    border: theme === 'light' ? "1px #0001 solid" : "1px #fff1 solid",
+                    border:
+                      theme === "light" ? "1px #0001 solid" : "1px #fff1 solid",
                     boxSizing: "border-box",
-                    boxShadow: theme === 'light'? "0 2px #0001" : "0 2px #fff1",
+                    boxShadow:
+                      theme === "light" ? "0 2px #0001" : "0 2px #fff1",
                     padding: "10px 0",
                   }}
                 >
@@ -54,11 +78,47 @@ const Panier = () => {
                   />
                   <Tooltip title={i.description} style={{ width: "20%" }}>
                     <p>
-                      {i.description.split(" ").splice(0, 7).join(" ") +
+                      {i.description.split(" ").splice(0, 9).join(" ") +
                         " " +
                         "..."}
                     </p>
                   </Tooltip>
+                  <Box id="modalBox" sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                      <InputLabel
+                        style={{
+                          color: theme === "light" ? "#000" : "#980433",
+                          borderColor: theme === "light" ? "#000" : "#980433",
+                        }}
+                      >
+                        qty
+                      </InputLabel>
+                      <StyledFieldset
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={i.qty}
+                        label="qty"
+                        style={{
+                          color: theme === "light" ? "#000" : "#980433",
+                        }}
+                        onChange={(e) =>
+                          dispatch({
+                            type: "CHANGE_CART_QTY",
+                            payload: {
+                              id: i.id,
+                              qty: e.target.value,
+                            },
+                          })
+                        }
+                      >
+                        {[...Array(i.inStock).keys()].map((x) => (
+                          <MenuItem value={x + 1} key={x + 1}>
+                            {x + 1}
+                          </MenuItem>
+                        ))}
+                      </StyledFieldset>
+                    </FormControl>
+                  </Box>
                   <h3>{i.price.toFixed(2) + "€"}</h3>
                   <Button
                     variant="contained"

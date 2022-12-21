@@ -17,7 +17,7 @@ const Products = {
     },
     {
       id: 2,
-      name: "skhelauri",
+      name: "sakhelauri",
       img: "https://i.postimg.cc/J7dfCcqQ/vin-Georgien.png",
       description:
         "750 Ml. Saferavi, Red Dry Wine, Alcohol 12%, Qvevris, Twins Wine Cellar",
@@ -71,7 +71,7 @@ const Products = {
     },
     {
       id: 8,
-      name: "skhelauri",
+      name: "sakhelauri",
       img: "https://i.postimg.cc/J7dfCcqQ/vin-Georgien.png",
       description:
         "750 Ml. Saferavi, Red Dry Wine, Alcohol 12%, Qvevris, Twins Wine Cellar",
@@ -125,7 +125,7 @@ const Products = {
     },
     {
       id: 14,
-      name: "skhelauri",
+      name: "sakhelauri",
       img: "https://i.postimg.cc/J7dfCcqQ/vin-Georgien.png",
       description:
         "750 Ml. Saferavi, Red Dry Wine, Alcohol 12%, Qvevris, Twins Wine Cellar",

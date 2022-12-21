@@ -11,6 +11,7 @@ import Panier from "../../../Icons/panier.png";
 import { Container } from "@mui/system";
 import { CartState } from "../../../Context/UseContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import {
   FormControl,
   InputLabel,
@@ -131,22 +132,52 @@ function HeaderPanier() {
               theme === "light" ? "#001" : "#980433"
             }`,
             backgroundColor: theme === "light" ? "#fff" : "#000",
-            borderRadius: "0.8rem",
+            borderRadius: "10px",
             boxSizing: "border-box",
-            overflowY: cart.length === 0 ? null : "scroll",
+            overflowY: cart.length === 0 ? null : "auto",
+            padding: "0",
+            position: "relative",
           }}
           sx={style}
-          className={"modalPanier"}
+          className="modalPanier"
         >
-          <Container>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: theme === "light" ? "#fff" : "#000",
+              backgroundColor: "#980433",
+              position: "sticky",
+              top: "0px",
+              zIndex: "2",
+            }}
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+          >
             <Typography
-              style={{ color: theme === "light" ? "#000" : "#980433" }}
-              id="modal-modal-title"
-              variant="h6"
-              component="h2"
+              style={{
+                fontSize: "25px",
+              }}
             >
               Panier
             </Typography>
+            <Button
+              style={{
+                color: theme === "light" ? "#fff" : "#000",
+                position: "absolute",
+                top: "0",
+                right: "0",
+              }}
+              onClick={handleClose}
+            >
+              <CloseRoundedIcon />
+            </Button>
+          </div>
+
+          <Container style={{ padding: "10px" }}>
             <div className="topOfPanier">
               {cart.length !== 0 ? (
                 <>
@@ -326,9 +357,7 @@ function HeaderPanier() {
                       Clear Cart
                       <DeleteForeverIcon />
                     </Button>
-                    <div
-                      style={{ display: "flex", justifyContent: "flex-end" }}
-                    >
+                    <div>
                       <h4
                         style={{
                           color: theme === "light" ? "#000" : "#980433",
@@ -337,7 +366,7 @@ function HeaderPanier() {
                           padding: "10px",
                         }}
                       >
-                        {totalPrice + "€"}
+                        Total Price: {totalPrice + "€"}
                       </h4>
                     </div>
                   </div>

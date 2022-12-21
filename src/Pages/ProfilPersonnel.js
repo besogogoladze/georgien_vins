@@ -3,12 +3,16 @@ import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import { List, ListItemText } from "@mui/material";
+import { CartState } from "../Context/UseContext";
 
 function ProfilPersonnel() {
   const { user } = useAuth0();
+  const {
+    state: { theme },
+  } = CartState();
 
   return (
-    <div>
+    <div style={{ backgroundColor: theme === "light" ? "#fff" : "#000" }}>
       {user && (
         <>
           <Stack direction="row" spacing={2}>

@@ -7,15 +7,14 @@ import SectionThree from "./Home/SectionThree";
 
 function Home() {
   const {
-    state: { theme }
+    state: { theme },
   } = CartState();
-  
 
   return (
     <div className={theme}>
-      <HomeCarousel/>
-      <SectionTwo/>
-      <SectionThree/>
+      <HomeCarousel />
+      <SectionTwo />
+      <SectionThree />
     </div>
   );
 }

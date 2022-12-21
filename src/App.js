@@ -19,7 +19,6 @@ const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
 const Product = lazy(() => import("./Pages/Product"));
 const Panier = lazy(() => import("./Pages/Panier"));
 const Vins = lazy(() => import("./Pages/Vins/Vins"));
-const Spiritueux = lazy(() => import("./Pages/Spiritueux/Spiritueux"));
 
 function App() {
   const [loading, startTransition] = useTransition();
@@ -75,7 +74,6 @@ function App() {
               />
               <Route path="/georgien_vins/:id" element={<Product />} />
               <Route path="/Panier" element={<Panier />} />
-              <Route path="/SPIRITUEUX" element={<Spiritueux />} />
               <Route path="/GEORGIE" element={<Georgie />} />
               <Route path="/GEORGIE/Histoire" element={<Histoire />} />
               <Route path="/GEORGIE/Cepages" element={<Cepages />} />
