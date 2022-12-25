@@ -65,11 +65,11 @@ code {
 }
 ::-webkit-scrollbar {
   border-radius: 1rem;
-  width: 12px;
+  width: 10px;
   background-color: #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #980433;
+  background-color: #980433;
   border-radius: 1rem;
 }
 ::-webkit-scrollbar-track {

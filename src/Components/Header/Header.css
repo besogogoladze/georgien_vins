@@ -1,0 +1,4 @@
+#panier::-webkit-scrollbar,
+#panier::-webkit-scrollbar-thumb {
+  background-color: unset !important;
+}

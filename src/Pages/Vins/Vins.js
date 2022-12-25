@@ -7,25 +7,35 @@ import Logo from "../../Icons/Logo_SVG.svg";
 import Fade from "react-awesome-reveal";
 import { Flip } from "react-awesome-reveal";
 import "../home.css";
+import axios from "axios";
 const Vins = () => {
   const [loading, startTransition] = useTransition();
   const [state, setState] = useState(null);
+  const [products, setProducts] = useState([]);
   const { show } = useState(false);
 
   useEffect(() => {
+    const Data = async () => {
+      const data = await axios.get(
+        "https://us-central1-vinsgeorgiens-a471b.cloudfunctions.net/vinsGeorgien",
+        { headers: { "Access-Control-Allow-Origin": "*" } }
+      );
+      setProducts(data.data.Products.data);
+    };
+    Data();
     startTransition(() => {
       setState(true);
     }, []);
   }, [state]);
 
   const {
-    state: { theme, cart, products },
+    state: { theme, cart },
     dispatch,
     productFilterState: { byStock, sort },
   } = CartState();
 
   const transformProducts = () => {
-    let sortedProducts = products.data;
+    let sortedProducts = products;
 
     if (sort) {
       sortedProducts = sortedProducts?.sort((a, b) =>
@@ -36,13 +46,6 @@ const Vins = () => {
     if (!byStock) {
       sortedProducts = sortedProducts?.filter((prod) => prod.inStock);
     }
-
-    // if (searchQuery) {
-    //   sortedProducts = sortedProducts.filter((prod) =>
-    //     prod.name.toLowerCase().includes(searchQuery)
-    //   );
-    // }
-
     return sortedProducts;
   };
 
@@ -84,7 +87,6 @@ const Vins = () => {
                 boxSizing: "border-box",
                 boxShadow:
                   theme === "light" ? "0 0 1px #090d2a" : "0 0 15px #980433",
-                // backgroundColor: theme === "light" ? "rgb(52, 58, 64)" : "#001",
                 display: "flex",
                 alignItems: "center",
                 flexDirection: "column",
@@ -173,45 +175,59 @@ const Vins = () => {
                 <h1 className={`${theme} word-break-all `}>
                   {i.name.toUpperCase()}
                 </h1>
-                <h3 className={theme}>{i.description}</h3>
-                <h4 className={theme}>{i.price + "€"}</h4>
-                {cart.some((product) => product.id === i.id) ? (
-                  <Flip
-                    triggerOnce
-                    direction="horizontal"
-                    collapse
-                    when={!show}
-                  >
-                    <Button
-                      variant="contained"
-                      color="error"
-                      onClick={() => {
-                        dispatch({
-                          type: "REMOVE_FROM_CART",
-                          payload: i,
-                        });
-                      }}
+                <h3 className={theme}>
+                  {i.description.split(" ").splice(0, 10).join(" ") +
+                    " " +
+                    "..."}
+                </h3>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {cart.some((product) => product.id === i.id) ? (
+                    <Flip
+                      triggerOnce
+                      direction="horizontal"
+                      collapse
+                      when={!show}
                     >
-                      Remove From Cart
-                    </Button>
-                  </Flip>
-                ) : (
-                  <Flip direction="vertical" triggerOnce>
-                    <Button
-                      variant="contained"
-                      color="success"
-                      onClick={() => {
-                        dispatch({
-                          type: "ADD_TO_CART",
-                          payload: i,
-                        });
-                      }}
-                      disabled={!i.inStock}
-                    >
-                      {!i.inStock ? "Out of Stock" : "Add to Cart"}
-                    </Button>
-                  </Flip>
-                )}
+                      <Button
+                        variant="contained"
+                        color="error"
+                        onClick={() => {
+                          dispatch({
+                            type: "REMOVE_FROM_CART",
+                            payload: i,
+                          });
+                        }}
+                        style={{ fontSize: "12px" }}
+                      >
+                        Remove From Cart
+                      </Button>
+                    </Flip>
+                  ) : (
+                    <Flip direction="vertical" triggerOnce>
+                      <Button
+                        variant="contained"
+                        color="success"
+                        onClick={() => {
+                          dispatch({
+                            type: "ADD_TO_CART",
+                            payload: i,
+                          });
+                        }}
+                        disabled={!i.inStock}
+                        style={{ fontSize: "12px" }}
+                      >
+                        {!i.inStock ? "Out of Stock" : "Add to Cart"}
+                      </Button>
+                    </Flip>
+                  )}
+                  <h4 className={theme}>{"Price: " + i.price + "€"}</h4>
+                </div>
               </Grid>
             </Fade>
           );

@@ -22,7 +22,7 @@ function Loading() {
         justifyContent: "center",
       }}
     >
-      <img style={{ width: "10%" }} src={Vin} alt="Loading..." />
+      <img style={{ width: "10%", borderRadius:'10rem' }} src={Vin} alt="Loading..." />
       <h2 className="loading">
         Loading
         <span>.</span>

@@ -43,7 +43,6 @@ const Filter = () => {
           style={{
             width: "100%",
             backgroundColor: theme === "light" ? "transparent" : "#333",
-            cursor: "pointer",
           }}
         >
           <AccordionSummary
@@ -54,7 +53,7 @@ const Filter = () => {
             }
             aria-controls="panel1a-content"
             id="panel1a-header"
-            style={{ height: "0px", margin: "0" }}
+            style={{ height: "0px", margin: "0", cursor: "pointer" }}
           >
             <FormLabel
               style={{
@@ -70,29 +69,14 @@ const Filter = () => {
             </FormLabel>
           </AccordionSummary>
           <AccordionDetails>
-            <FormControl style={{ width: "100%" }}>
+            <FormControl style={{ width: "fit-content" }}>
               <RadioGroup
                 id="filterRadio"
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="Ascending"
                 name="radio-buttons-group"
+                style={{ gap: "5px" }}
               >
-                {byStock || sort ? (
-                  <Fade top>
-                    <Button
-                      variant="outlined"
-                      color="success"
-                      style={{ fontSize: "15px" }}
-                      onClick={() =>
-                        productFilterDispatch({
-                          type: "CLEAR_FILTERS",
-                        })
-                      }
-                    >
-                      CLEAR FILTER
-                    </Button>
-                  </Fade>
-                ) : null}
                 <FormControlLabel
                   value="Ascending"
                   control={
@@ -159,6 +143,24 @@ const Filter = () => {
                     label="Out Of Stock"
                   />
                 </FormGroup>
+                {byStock || sort ? (
+                  <Fade top>
+                    <Button
+                      style={{
+                        fontSize: "15px",
+                        backgroundColor: "#980433",
+                        color: "#fff",
+                      }}
+                      onClick={() =>
+                        productFilterDispatch({
+                          type: "CLEAR_FILTERS",
+                        })
+                      }
+                    >
+                      CLEAR FILTER
+                    </Button>
+                  </Fade>
+                ) : null}
               </RadioGroup>
             </FormControl>
           </AccordionDetails>

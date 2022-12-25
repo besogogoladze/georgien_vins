@@ -117,3 +117,12 @@
     text-align: end;
   }
 }
+@media only screen and (max-width: 350px) {
+  .ClearCart_TotalPrice {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ClearCart_TotalPrice > button {
+    align-self: flex-start !important;
+  }
+}

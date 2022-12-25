@@ -1,20 +1,24 @@
 .card {
-    width: 300px;
-    box-sizing: border-box;
-    border: 1px #000 solid;
-    text-align: center;
-    padding: 15px;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px #000 solid;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
 }
 .card h3 {
-    text-align: start;
+  text-align: start;
 }
 .card h4 {
-    text-align: end;
+  text-align: end;
+}
+.card > * {
+  padding: 10px 0;
 }
 .css-ke5b6m-MuiButtonBase-root-MuiButton-root.Mui-disabled {
-    color: #fff !important;
-    background-color: #333 !important;
+  color: #fff !important;
+  background-color: #333 !important;
 }
-.gNublD{
-    margin: 0 !important;
+.gNublD {
+  margin: 0 !important;
 }
