@@ -24,15 +24,11 @@ const Vins = lazy(() => import("./Pages/Vins/Vins"));
 
 function App() {
   const [offline, setOffline] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const {
     state: { theme },
   } = CartState();
 
-  const handleLoading = () => {
-    setIsLoading(false);
-  };
   useEffect(() => {
     window.addEventListener("offline", () => {
       setOffline(
@@ -81,40 +77,34 @@ function App() {
         setOffline(false);
       }, [5000]);
     });
-    window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener("load", handleLoading);
   }, []);
 
   return (
     <Suspense fallback={<Loading />}>
       <span style={{ position: "relative" }} className={theme}>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            <Header />
-            <Routes>
-              <Route path="/georgien_vins" exact element={<Home />} />
-              <Route path="/VINS" exact element={<Vins />} />
-              <Route
-                path="/Profil_Personnel"
-                exact
-                element={<ProfilPersonnel />}
-              />
-              <Route path="/georgien_vins/:id" element={<Product />} />
-              <Route path="/Panier" element={<Panier />} />
-              <Route path="/GEORGIE" element={<Georgie />} />
-              <Route path="/GEORGIE/Histoire" element={<Histoire />} />
-              <Route path="/GEORGIE/Cepages" element={<Cepages />} />
-              <Route path="/GEORGIE/Qvevri" element={<Qvevri />} />
-              <Route path="*" element={<Error />} />
-              {/* <Route path="/adminPosts/:id" element={<RemovePost />} /> */}
-              {/* <Route path="/Boovies/MoviesList/:page?" exact component={Movies} /> */}
-              {/* <Route path="/Boovies/Search/:page?" exact component= {Search}/> */}
-            </Routes>
-            <Footer />
-          </>
-        )}
+        <>
+          <Header />
+          <Routes>
+            <Route path="/georgien_vins" exact element={<Home />} />
+            <Route path="/VINS" exact element={<Vins />} />
+            <Route
+              path="/Profil_Personnel"
+              exact
+              element={<ProfilPersonnel />}
+            />
+            <Route path="/georgien_vins/:id" element={<Product />} />
+            <Route path="/Panier" element={<Panier />} />
+            <Route path="/GEORGIE" element={<Georgie />} />
+            <Route path="/GEORGIE/Histoire" element={<Histoire />} />
+            <Route path="/GEORGIE/Cepages" element={<Cepages />} />
+            <Route path="/GEORGIE/Qvevri" element={<Qvevri />} />
+            <Route path="*" element={<Error />} />
+            {/* <Route path="/adminPosts/:id" element={<RemovePost />} /> */}
+            {/* <Route path="/Boovies/MoviesList/:page?" exact component={Movies} /> */}
+            {/* <Route path="/Boovies/Search/:page?" exact component= {Search}/> */}
+          </Routes>
+          <Footer />
+        </>
         <ArrowCircleUpOutlinedIcon
           style={{
             position: "fixed",
