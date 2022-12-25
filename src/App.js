@@ -14,6 +14,8 @@ import Qvevri from "./Pages/Georgie/Qvevri/Qvevri";
 import Error from "./Pages/Error/Error";
 import { Stack } from "@mui/system";
 import { Alert } from "@mui/material";
+import WifiOffRoundedIcon from "@mui/icons-material/WifiOffRounded";
+import WifiRoundedIcon from "@mui/icons-material/WifiRounded";
 const Home = lazy(() => import("./Pages/Home"));
 const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
 const Product = lazy(() => import("./Pages/Product"));
@@ -35,8 +37,21 @@ function App() {
     window.addEventListener("offline", () => {
       setOffline(
         <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert className="offlineTheme" severity="error">
-            You are Offline!!!
+          <Alert icon={false} className="offlineTheme" severity="error">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <WifiOffRoundedIcon
+                style={{
+                  marginRight: "10px",
+                }}
+              />{" "}
+              You are Offline!!!
+            </div>
           </Alert>
         </Stack>
       );
@@ -44,8 +59,21 @@ function App() {
     window.addEventListener("online", () => {
       setOffline(
         <Stack sx={{ width: "100%" }} spacing={2}>
-          <Alert className="offlineTheme" severity="success">
-            You are back Online!!!
+          <Alert icon={false} className="offlineTheme" severity="success">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <WifiRoundedIcon
+                style={{
+                  marginRight: "10px",
+                }}
+              />{" "}
+              You are back Online!!!
+            </div>
           </Alert>
         </Stack>
       );
