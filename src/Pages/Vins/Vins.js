@@ -16,10 +16,9 @@ const Vins = () => {
 
   useEffect(() => {
     const Data = async () => {
-      const data = await axios.get(
-        "https://us-central1-vinsgeorgiens-a471b.cloudfunctions.net/vinsGeorgien",
-        { headers: { "Access-Control-Allow-Origin": "*" } }
-      );
+      const data = await axios.get(process.env.REACT_APP_PRODUCTS_API, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      });
       setProducts(data.data.Products.data);
     };
     Data();

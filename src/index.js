@@ -14,8 +14,7 @@ root.render(
     <Context>
       <PayPalScriptProvider
         options={{
-          "client-id":
-            "AT0Nob7qpyjHbNquFhdtXwISfAIu37d3JvO1rTGjly9HH-J2aFZJ_pr8RrPeDN2_rFVSnq3QBFEtygCt",
+          "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
           currency: "EUR",
           locale: "fr_FR",
           "enable-funding": "paylater",
