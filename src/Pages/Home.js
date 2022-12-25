@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { CartState } from "../Context/UseContext";
 import HomeCarousel from "./Home/HomeCarousel";
 import "./home.css";
@@ -8,7 +8,7 @@ import axios from "axios";
 import { queryClient } from "..";
 
 function Home() {
-  const [ip, setIP] = useState("");
+  // const [ip, setIP] = useState("");
   const {
     state: { theme },
   } = CartState();
@@ -21,20 +21,17 @@ function Home() {
     });
   }, []);
 
-  const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/");
-    console.log(res.data);
-    setIP(res.data.IPv4);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-
-  console.log(ip);
+  // const getData = async () => {
+  //   const res = await axios.get("https://geolocation-db.com/json/");
+  //   console.log(res.data);
+  //   setIP(res.data.IPv4);
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div className={theme}>
-      <p>{ip}</p>
       <HomeCarousel />
       <SectionTwo />
       <SectionThree />
