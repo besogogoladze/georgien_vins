@@ -43,8 +43,8 @@ export const productFilterReducer = (state, action) => {
       return { ...state, searchQuery: action.payload };
     case "CLEAR_FILTERS":
       return {
+        sort: false,
         byStock: false,
-        searchQuery: "",
       };
     default:
       return state;

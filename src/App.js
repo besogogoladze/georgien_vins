@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import Loading from "./Loading/Loading";
 import { CartState } from "./Context/UseContext";
 import Footer from "./Components/Footer/Footer";
@@ -21,10 +21,16 @@ const Panier = lazy(() => import("./Pages/Panier"));
 const Vins = lazy(() => import("./Pages/Vins/Vins"));
 
 function App() {
-  const [loading, startTransition] = useTransition();
-  const [state, setState] = useState(null);
   const [offline, setOffline] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const {
+    state: { theme },
+  } = CartState();
+
+  const handleLoading = () => {
+    setIsLoading(false);
+  };
   useEffect(() => {
     window.addEventListener("offline", () => {
       setOffline(
@@ -47,19 +53,14 @@ function App() {
         setOffline(false);
       }, [5000]);
     });
-    startTransition(() => {
-      setState(true);
-    }, []);
-  }, [state]);
-
-  const {
-    state: { theme },
-  } = CartState();
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
+  }, []);
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loading />}>
       <span style={{ position: "relative" }} className={theme}>
-        {loading ? (
+        {isLoading ? (
           <Loading />
         ) : (
           <>

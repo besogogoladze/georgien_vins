@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import Auth0ProviderWithHistory from "./Auth/AuthProvider";
 import Context from "./Context/UseContext";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { QueryClient, QueryClientProvider } from "react-query";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+export const queryClient = new QueryClient();
 
 root.render(
   <React.Fragment>
@@ -22,7 +24,9 @@ root.render(
       >
         <Auth0ProviderWithHistory>
           <BrowserRouter>
-            <App />
+            <QueryClientProvider client={queryClient}>
+              <App />
+            </QueryClientProvider>
           </BrowserRouter>
         </Auth0ProviderWithHistory>
       </PayPalScriptProvider>

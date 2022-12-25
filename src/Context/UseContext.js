@@ -38,8 +38,8 @@ function Context({ children }) {
   const [productFilterState, productFilterDispatch] = useReducer(
     productFilterReducer,
     {
+      sort: false,
       byStock: false,
-      searchQuery: "",
     }
   );
 
