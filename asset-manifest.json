@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/georgien_vins/static/css/main.8e205de2.css",
-    "main.js": "/georgien_vins/static/js/main.6d2873d1.js",
+    "main.css": "/georgien_vins/static/css/main.33f14176.css",
+    "main.js": "/georgien_vins/static/js/main.160957f3.js",
     "static/css/879.e3dbf0ba.chunk.css": "/georgien_vins/static/css/879.e3dbf0ba.chunk.css",
-    "static/js/879.f231286b.chunk.js": "/georgien_vins/static/js/879.f231286b.chunk.js",
-    "static/js/733.9eaaeb9f.chunk.js": "/georgien_vins/static/js/733.9eaaeb9f.chunk.js",
+    "static/js/879.d97bcda1.chunk.js": "/georgien_vins/static/js/879.d97bcda1.chunk.js",
+    "static/js/704.7cfbde44.chunk.js": "/georgien_vins/static/js/704.7cfbde44.chunk.js",
     "static/js/497.a3b8023f.chunk.js": "/georgien_vins/static/js/497.a3b8023f.chunk.js",
     "static/js/381.1d7a44c8.chunk.js": "/georgien_vins/static/js/381.1d7a44c8.chunk.js",
     "static/css/268.6295131d.chunk.css": "/georgien_vins/static/css/268.6295131d.chunk.css",
-    "static/js/268.1b5b46a1.chunk.js": "/georgien_vins/static/js/268.1b5b46a1.chunk.js",
-    "static/js/148.b52a58bb.chunk.js": "/georgien_vins/static/js/148.b52a58bb.chunk.js",
-    "static/js/31.4fbbbf5f.chunk.js": "/georgien_vins/static/js/31.4fbbbf5f.chunk.js",
-    "static/js/831.0d4e6b2c.chunk.js": "/georgien_vins/static/js/831.0d4e6b2c.chunk.js",
+    "static/js/268.230ae677.chunk.js": "/georgien_vins/static/js/268.230ae677.chunk.js",
+    "static/js/881.1ae212f0.chunk.js": "/georgien_vins/static/js/881.1ae212f0.chunk.js",
+    "static/js/464.097a2f1e.chunk.js": "/georgien_vins/static/js/464.097a2f1e.chunk.js",
+    "static/js/852.78102f37.chunk.js": "/georgien_vins/static/js/852.78102f37.chunk.js",
     "static/media/slide_1.jpg": "/georgien_vins/static/media/slide_1.f5b9d76f6054c7690ebd.jpg",
     "static/media/bg-1.jpg": "/georgien_vins/static/media/bg-1.748e7fb9bc51aac28b4a.jpg",
     "static/media/Personal-Wine-Loading-Animation-For-Website.gif": "/georgien_vins/static/media/Personal-Wine-Loading-Animation-For-Website.5e53835a4f66eca2c6fc.gif",
@@ -44,7 +44,7 @@
     "index.html": "/georgien_vins/index.html"
   },
   "entrypoints": [
-    "static/css/main.8e205de2.css",
-    "static/js/main.6d2873d1.js"
+    "static/css/main.33f14176.css",
+    "static/js/main.160957f3.js"
   ]
 }
