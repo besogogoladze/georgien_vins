@@ -24,6 +24,7 @@ function Histoire() {
   const {
     state: { theme },
   } = CartState();
+
   return (
     <>
       {loading ? (

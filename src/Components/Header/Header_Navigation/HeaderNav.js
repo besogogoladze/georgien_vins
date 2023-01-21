@@ -6,7 +6,7 @@ const HeaderNav = () => {
 
   return (
     <div>
-      <BurgerMenu/>
+      <BurgerMenu />
       <Nav />
     </div>
   );

@@ -44,7 +44,7 @@ const HomeCarousel = () => {
             style={{
               position: "absolute",
               left: "20px",
-              top: "50%",
+              top: "40%",
               zIndex: "1000",
             }}
             onClick={() =>
@@ -80,7 +80,7 @@ const HomeCarousel = () => {
           </Carousel>
           <Button
             ref={ArrowStyle}
-            style={{ position: "absolute", right: "20px", top: "50%" }}
+            style={{ position: "absolute", right: "20px", top: "40%" }}
             onClick={() =>
               carousel.current.state.activeIndex !==
               carousel.current.state.pages.length - 1

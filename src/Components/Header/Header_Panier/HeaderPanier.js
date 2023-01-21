@@ -246,7 +246,7 @@ function HeaderPanier() {
                                     display: "flex",
                                     justifyContent: "space-between",
                                     alignItems: "flex-start",
-                                    gap: "10px",
+                                    gap: "40px",
                                   }}
                                 >
                                   <div>
