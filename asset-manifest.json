@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/georgien_vins/static/css/main.30433499.css",
-    "main.js": "/georgien_vins/static/js/main.bb764fc7.js",
+    "main.js": "/georgien_vins/static/js/main.1247db4d.js",
     "static/css/879.e3dbf0ba.chunk.css": "/georgien_vins/static/css/879.e3dbf0ba.chunk.css",
     "static/js/879.14e0c713.chunk.js": "/georgien_vins/static/js/879.14e0c713.chunk.js",
     "static/js/704.7cfbde44.chunk.js": "/georgien_vins/static/js/704.7cfbde44.chunk.js",
     "static/js/497.a3b8023f.chunk.js": "/georgien_vins/static/js/497.a3b8023f.chunk.js",
     "static/js/381.1d7a44c8.chunk.js": "/georgien_vins/static/js/381.1d7a44c8.chunk.js",
     "static/css/268.6295131d.chunk.css": "/georgien_vins/static/css/268.6295131d.chunk.css",
-    "static/js/268.f31766ba.chunk.js": "/georgien_vins/static/js/268.f31766ba.chunk.js",
+    "static/js/268.cf4576b4.chunk.js": "/georgien_vins/static/js/268.cf4576b4.chunk.js",
     "static/js/881.1ae212f0.chunk.js": "/georgien_vins/static/js/881.1ae212f0.chunk.js",
     "static/js/464.097a2f1e.chunk.js": "/georgien_vins/static/js/464.097a2f1e.chunk.js",
     "static/js/852.78102f37.chunk.js": "/georgien_vins/static/js/852.78102f37.chunk.js",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.30433499.css",
-    "static/js/main.bb764fc7.js"
+    "static/js/main.1247db4d.js"
   ]
 }
