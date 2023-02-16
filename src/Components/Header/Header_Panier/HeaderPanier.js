@@ -154,7 +154,7 @@ function HeaderPanier() {
               backgroundColor: "#980433",
               position: "sticky",
               top: "0",
-              zIndex: "2",
+              zIndex: "1000",
               padding: "10px 0",
               borderRadius: "2rem 2rem 0 0",
             }}

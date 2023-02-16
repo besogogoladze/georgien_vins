@@ -61,7 +61,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 function UpHeader() {
   const {
-    state: { theme },
+    state: { theme, autoTheme },
     dispatch,
   } = CartState();
 
@@ -112,13 +112,18 @@ function UpHeader() {
             flexWrap: "wrap",
           }}
         >
-          <FormGroup>
-            <FormControlLabel
-              control={<MaterialUISwitch sx={{ m: 1 }} />}
-              onChange={toggleTheme}
-              checked={theme === "light" ? false : true}
-            />
-          </FormGroup>
+          {autoTheme === true ? (
+            <p style={{ color: "#fff" }}>auto</p>
+          ) : (
+            <FormGroup>
+              <FormControlLabel
+                control={<MaterialUISwitch sx={{ m: 1 }} />}
+                onChange={toggleTheme}
+                checked={theme === "light" ? false : true}
+              />
+            </FormGroup>
+          )}
+
           <MonCompte />
           <div
             style={{

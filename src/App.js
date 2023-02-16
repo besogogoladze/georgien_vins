@@ -99,9 +99,7 @@ function App() {
             <Route path="/GEORGIE/Cepages" element={<Cepages />} />
             <Route path="/GEORGIE/Qvevri" element={<Qvevri />} />
             <Route path="*" element={<Error />} />
-            {/* <Route path="/adminPosts/:id" element={<RemovePost />} /> */}
             {/* <Route path="/Boovies/MoviesList/:page?" exact component={Movies} /> */}
-            {/* <Route path="/Boovies/Search/:page?" exact component= {Search}/> */}
           </Routes>
           <Footer />
         </>

@@ -21,6 +21,14 @@ function Context({ children }) {
     const localData = localStorage.getItem("cart");
     return localData ? JSON.parse(localData) : [];
   };
+
+  const localTimeZone = () => {
+    var autoTheme = localStorage.getItem("autoTheme");
+    autoTheme === null
+      ? localStorage.setItem("autoTheme", false)
+      : JSON.parse(autoTheme);
+    return autoTheme ? JSON.parse(autoTheme) : false;
+  };
   const localTheme = () => {
     var localTheme = localStorage.getItem("mode");
     localTheme === null
@@ -29,10 +37,31 @@ function Context({ children }) {
 
     return localTheme ? JSON.parse(localTheme) : "light";
   };
+  // console.log(localTheme());
+  const autoThemeFunction = () => {
+    const hours = new Date().getHours();
+    const l = localStorage.removeItem("mode");
+    var localTheme = localStorage.getItem("mode");
+    if (hours >= 6) {
+      return l === null || localTheme === "dark"
+        ? localStorage.setItem("mode", JSON.stringify("light"))
+        : null;
+    }
+    // if (hours >= 20) {
+    //   const dark = localStorage.setItem("mode", JSON.stringify("dark"));
+    //   return dark;
+    // }
+    // if (hours >= 0) {
+    //   const dark = localStorage.setItem("mode", JSON.stringify("dark"));
+    //   return dark;
+    // }
+  };
+  // console.log(autoThemeFunction());
 
   const [state, dispatch] = useReducer(CartReducer, {
     cart: localData(),
-    theme: localTheme(),
+    theme: localTimeZone() === true ? autoThemeFunction() : localTheme(),
+    autoTheme: localTimeZone(),
   });
 
   const [productFilterState, productFilterDispatch] = useReducer(
@@ -46,6 +75,7 @@ function Context({ children }) {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
     localStorage.setItem("mode", JSON.stringify(state.theme));
+    localStorage.setItem("autoTheme", state.autoTheme);
   }, [state]);
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CartState } from "../../Context/UseContext";
 import { Container } from "@mui/system";
 import Radio from "@mui/material/Radio";
@@ -18,12 +18,13 @@ import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
 import { Fade } from "react-awesome-reveal";
 
 const Filter = () => {
+  const [filterExpanded, setFilterExpanded] = useState(true);
+  const [categoryExpanded, setCategoryExpanded] = useState(true);
   const {
     state: { theme },
-    productFilterState: { byStock, sort },
+    productFilterState: { byStock, sort, byCategory },
     productFilterDispatch,
   } = CartState();
-
   return (
     <div id="filter" style={{ width: "20%" }}>
       <Container
@@ -40,12 +41,14 @@ const Filter = () => {
         }}
       >
         <Accordion
+          expanded={!filterExpanded}
           style={{
             width: "100%",
             backgroundColor: theme === "light" ? "transparent" : "#333",
           }}
         >
           <AccordionSummary
+            onClick={() => setFilterExpanded(!filterExpanded)}
             expandIcon={
               <TuneRoundedIcon
                 style={{ color: theme === "light" ? "#000" : "#980433" }}
@@ -53,7 +56,14 @@ const Filter = () => {
             }
             aria-controls="panel1a-content"
             id="panel1a-header"
-            style={{ height: "0px", margin: "0", cursor: "pointer" }}
+            style={{
+              height: "0px",
+              margin: "0",
+              cursor: "pointer",
+              boxShadow: `0px 3px 5px 0px ${
+                theme === "light" ? "#000" : "#980433"
+              }`,
+            }}
           >
             <FormLabel
               style={{
@@ -69,11 +79,10 @@ const Filter = () => {
             </FormLabel>
           </AccordionSummary>
           <AccordionDetails>
-            <FormControl style={{ width: "fit-content" }}>
+            <FormControl style={{ width: "100%" }}>
               <RadioGroup
-                id="filterRadio"
                 aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="Ascending"
+                defaultValue=""
                 name="radio-buttons-group"
                 style={{ gap: "5px" }}
               >
@@ -90,7 +99,10 @@ const Filter = () => {
                     />
                   }
                   label="Ascending"
-                  style={{ color: theme === "light" ? "#000" : "#980433" }}
+                  style={{
+                    color: theme === "light" ? "#000" : "#980433",
+                    margin: "0",
+                  }}
                   onChange={() =>
                     productFilterDispatch({
                       type: "SORT_BY_PRICE",
@@ -101,7 +113,10 @@ const Filter = () => {
                 />
                 <FormControlLabel
                   value="Descending"
-                  style={{ color: theme === "light" ? "#000" : "#980433" }}
+                  style={{
+                    color: theme === "light" ? "#000" : "#980433",
+                    margin: "0",
+                  }}
                   control={
                     <Radio
                       sx={{
@@ -123,7 +138,10 @@ const Filter = () => {
                 />
                 <FormGroup>
                   <FormControlLabel
-                    style={{ color: theme === "light" ? "#000" : "#980433" }}
+                    style={{
+                      color: theme === "light" ? "#000" : "#980433",
+                      margin: "0",
+                    }}
                     control={
                       <Checkbox
                         sx={{
@@ -143,7 +161,7 @@ const Filter = () => {
                     label="Out Of Stock"
                   />
                 </FormGroup>
-                {byStock || sort ? (
+                {byStock || sort === "lowToHigh" || sort === "highToLow" ? (
                   <Fade top>
                     <Button
                       style={{
@@ -158,6 +176,145 @@ const Filter = () => {
                       }
                     >
                       CLEAR FILTER
+                    </Button>
+                  </Fade>
+                ) : null}
+              </RadioGroup>
+            </FormControl>
+          </AccordionDetails>
+        </Accordion>
+      </Container>
+      <Container id="categories">
+        <Accordion
+          expanded={categoryExpanded}
+          style={{
+            width: "100%",
+            backgroundColor: theme === "light" ? "transparent" : "#333",
+          }}
+        >
+          <AccordionSummary
+            onClick={() => setCategoryExpanded(!categoryExpanded)}
+            expandIcon={
+              <TuneRoundedIcon
+                style={{ color: theme === "light" ? "#000" : "#980433" }}
+              />
+            }
+            aria-controls="panel1a-content"
+            style={{
+              height: "0px",
+              margin: "0",
+              cursor: "pointer",
+              boxShadow: `0px 3px 5px 0px ${
+                theme === "light" ? "#000" : "#980433"
+              }`,
+            }}
+          >
+            <FormLabel
+              style={{
+                padding: "5px 0",
+                fontSize: "25px",
+                width: "100%",
+                color: theme === "light" ? "#000" : "#980433",
+                cursor: "pointer",
+              }}
+            >
+              Categories
+            </FormLabel>
+          </AccordionSummary>
+          <AccordionDetails>
+            <FormControl style={{ width: "100%" }}>
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                name="radio-buttons-group"
+                style={{ gap: "5px" }}
+              >
+                <FormControlLabel
+                  control={
+                    <Radio
+                      sx={{
+                        color: "rgb(216, 27, 96)",
+                        "&.Mui-checked": {
+                          color: "rgb(216, 27, 96)",
+                        },
+                      }}
+                    />
+                  }
+                  label="Vins Rouge"
+                  style={{
+                    color: theme === "light" ? "#000" : "#980433",
+                    margin: "0",
+                  }}
+                  onChange={() =>
+                    productFilterDispatch({
+                      type: "FILTER_BY_CATEGORY",
+                      payload: "Rouge",
+                    })
+                  }
+                  checked={byCategory === "Rouge"}
+                />
+                <FormControlLabel
+                  style={{
+                    color: theme === "light" ? "#000" : "#980433",
+                    margin: "0",
+                  }}
+                  control={
+                    <Radio
+                      sx={{
+                        color: "rgb(216, 27, 96)",
+                        "&.Mui-checked": {
+                          color: "rgb(216, 27, 96)",
+                        },
+                      }}
+                    />
+                  }
+                  label="Vins Blanc"
+                  onChange={() =>
+                    productFilterDispatch({
+                      type: "FILTER_BY_CATEGORY",
+                      payload: "Blanc",
+                    })
+                  }
+                  checked={byCategory === "Blanc"}
+                />
+                <FormControlLabel
+                  style={{
+                    color: theme === "light" ? "#000" : "#980433",
+                    margin: "0",
+                  }}
+                  control={
+                    <Radio
+                      sx={{
+                        color: "rgb(216, 27, 96)",
+                        "&.Mui-checked": {
+                          color: "rgb(216, 27, 96)",
+                        },
+                      }}
+                    />
+                  }
+                  label="Vins Rose"
+                  onChange={() =>
+                    productFilterDispatch({
+                      type: "FILTER_BY_CATEGORY",
+                      payload: "Rose",
+                    })
+                  }
+                  checked={byCategory === "Rose"}
+                />
+                {byCategory ? (
+                  <Fade top>
+                    <Button
+                      style={{
+                        fontSize: "15px",
+                        backgroundColor: "#980433",
+                        color: "#fff",
+                      }}
+                      onClick={() =>
+                        productFilterDispatch({
+                          type: "CLEAR_CATEGORY",
+                        })
+                      }
+                    >
+                      CLEAR CATEGORIES
                     </Button>
                   </Fade>
                 ) : null}
