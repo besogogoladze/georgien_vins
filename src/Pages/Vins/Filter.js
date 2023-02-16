@@ -45,6 +45,7 @@ const Filter = () => {
           style={{
             width: "100%",
             backgroundColor: theme === "light" ? "transparent" : "#333",
+            borderRadius: "2rem",
           }}
         >
           <AccordionSummary
@@ -63,6 +64,7 @@ const Filter = () => {
               boxShadow: `0px 3px 5px 0px ${
                 theme === "light" ? "#000" : "#980433"
               }`,
+              borderRadius: "2rem",
             }}
           >
             <FormLabel
@@ -190,6 +192,7 @@ const Filter = () => {
           style={{
             width: "100%",
             backgroundColor: theme === "light" ? "transparent" : "#333",
+            borderRadius: "2rem",
           }}
         >
           <AccordionSummary
@@ -207,6 +210,7 @@ const Filter = () => {
               boxShadow: `0px 3px 5px 0px ${
                 theme === "light" ? "#000" : "#980433"
               }`,
+              borderRadius: "2rem",
             }}
           >
             <FormLabel
