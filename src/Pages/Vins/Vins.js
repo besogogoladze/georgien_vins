@@ -25,7 +25,7 @@ const Vins = () => {
     const data = await axios.get(process.env.REACT_APP_PRODUCTS_API, {
       headers: { "Access-Control-Allow-Origin": "*" },
     });
-    return data.data.Products.data;
+    return data;
   };
 
   const { isLoading, data, isError, error } = useQuery("products", Data, {
@@ -44,7 +44,7 @@ const Vins = () => {
   }
 
   const transformProducts = () => {
-    let sortedProducts = data;
+    let sortedProducts = data.data.Products.data;
 
     if (sort) {
       sortedProducts = sortedProducts?.sort((a, b) => {
@@ -77,6 +77,7 @@ const Vins = () => {
         }
       });
     }
+    console.log(sortedProducts);
     return sortedProducts;
   };
   return (
