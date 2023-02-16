@@ -77,7 +77,6 @@ const Vins = () => {
         }
       });
     }
-    console.log(sortedProducts);
     return sortedProducts;
   };
   return (
@@ -96,10 +95,6 @@ const Vins = () => {
           <h1
             style={{
               margin: "20px 0 0 24px",
-              position: "absolute",
-              top: "20px",
-              left: "20%",
-              color: "#fff",
             }}
           >
             Vins {byCategory}
