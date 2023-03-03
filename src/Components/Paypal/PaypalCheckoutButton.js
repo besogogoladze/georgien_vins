@@ -13,7 +13,7 @@ function PaypalCheckoutButton(props) {
   const navigate = useNavigate();
 
   const PaypalButton = React.forwardRef((props, ref) => (
-    <div style={{ width: "70%" }} ref={ref}>
+    <div style={{ width: "40%" }} ref={ref}>
       {props.children}
     </div>
   ));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
@@ -15,8 +15,9 @@ const BurgerMenu = () => {
   });
   const {
     state: { theme },
+    productFilterDispatch,
   } = CartState();
-
+  const ref = useRef();
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -30,6 +31,7 @@ const BurgerMenu = () => {
 
   const list = (anchor) => (
     <Box
+      ref={ref}
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         height: "100%",
@@ -78,7 +80,13 @@ const BurgerMenu = () => {
             }}
             className="nav_a"
             to="/VINS"
-            onClick={() => state[false]}
+            onClick={() => {
+              ref.current.className.visibility = "hidden !important";
+              productFilterDispatch({
+                type: "FILTER_BY_CATEGORY",
+                payload: false,
+              });
+            }}
           >
             VINS
           </NavLink>

@@ -1,6 +1,6 @@
 import { Button, Grid, Skeleton, Stack } from "@mui/material";
 import { Container } from "@mui/system";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CartState } from "../../Context/UseContext";
 import Filter from "./Filter";
 import Fade from "react-awesome-reveal";
@@ -13,8 +13,11 @@ const Vins = () => {
   const memoizedSkeletons = useMemo(() => {
     return Array(12).fill("");
   }, []);
+  // eslint-disable-next-line no-unused-vars
   const [skeletons, setSkeletons] = useState(memoizedSkeletons);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const {
     state: { theme, cart },
     dispatch,
@@ -79,6 +82,7 @@ const Vins = () => {
     }
     return sortedProducts;
   };
+
   return (
     <div
       id="VinsPage"

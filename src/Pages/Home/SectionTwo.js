@@ -6,14 +6,15 @@ import vin3 from "../../Icons/pro-3.png";
 import vin4 from "../../Icons/pro-4.png";
 import vin5 from "../../Icons/pro-5.png";
 import vin6 from "../../Icons/pro-6.png";
-import promo1 from "../../Icons/promo-1.png"
-import promo2 from "../../Icons/promo-2.png"
-import promo3 from "../../Icons/promo-3.png"
+import promo1 from "../../Icons/promo-1.png";
+import promo2 from "../../Icons/promo-2.png";
+import promo3 from "../../Icons/promo-3.png";
 import { CartState } from "../../Context/UseContext";
 
 const SectionTwo = () => {
   const {
     state: { theme },
+    productFilterDispatch,
   } = CartState();
 
   return (
@@ -27,30 +28,45 @@ const SectionTwo = () => {
         }}
       >
         <div style={{ width: "33.3333333%", position: "relative" }}>
-          <NavLink to="#" className="SectionTwoA">
-            <img
-              className="SectionTwoImg"
-              src={promo1}
-              alt="img"
-            />
+          <NavLink
+            onClick={() =>
+              productFilterDispatch({
+                type: "FILTER_BY_CATEGORY",
+                payload: "Blanc",
+              })
+            }
+            to="/VINS"
+            className="SectionTwoA"
+          >
+            <img className="SectionTwoImg" src={promo1} alt="img" />
           </NavLink>
         </div>
         <div style={{ width: "33.3333333%", position: "relative" }}>
-          <NavLink to="#" className="SectionTwoA">
-            <img
-              className="SectionTwoImg"
-              src={promo2}
-              alt="img"
-            />
+          <NavLink
+            onClick={() =>
+              productFilterDispatch({
+                type: "FILTER_BY_CATEGORY",
+                payload: "Rouge",
+              })
+            }
+            to="/VINS"
+            className="SectionTwoA"
+          >
+            <img className="SectionTwoImg" src={promo2} alt="img" />
           </NavLink>
         </div>
         <div style={{ width: "33.3333333%", position: "relative" }}>
-          <NavLink to="#" className="SectionTwoA">
-            <img
-              className="SectionTwoImg"
-              src={promo3}
-              alt="img"
-            />
+          <NavLink
+            onClick={() =>
+              productFilterDispatch({
+                type: "FILTER_BY_CATEGORY",
+                payload: "Rose",
+              })
+            }
+            to="/VINS"
+            className="SectionTwoA"
+          >
+            <img className="SectionTwoImg" src={promo3} alt="img" />
           </NavLink>
         </div>
       </div>

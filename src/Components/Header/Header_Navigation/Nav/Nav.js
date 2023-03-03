@@ -7,6 +7,7 @@ import { CartState } from "../../../../Context/UseContext";
 const Nav = () => {
   const {
     state: { theme },
+    productFilterDispatch,
   } = CartState();
   return (
     <ul
@@ -29,7 +30,16 @@ const Nav = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="nav_a" to="/VINS">
+        <NavLink
+          onClick={() =>
+            productFilterDispatch({
+              type: "FILTER_BY_CATEGORY",
+              payload: false,
+            })
+          }
+          className="nav_a"
+          to="/VINS"
+        >
           VINS
         </NavLink>
       </li>

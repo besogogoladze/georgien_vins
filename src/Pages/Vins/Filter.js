@@ -25,6 +25,7 @@ const Filter = () => {
     productFilterState: { byStock, sort, byCategory },
     productFilterDispatch,
   } = CartState();
+
   return (
     <div id="filter" style={{ width: "20%" }}>
       <Container

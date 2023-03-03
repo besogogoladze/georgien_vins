@@ -14,6 +14,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import PanierImg from "../Icons/panier.png";
 import { styled } from "@mui/material/styles";
 import { Select } from "@mui/material";
+import PaypalCheckoutButton from "../Components/Paypal/PaypalCheckoutButton";
 
 const Panier = () => {
   const [totalPrice, setTotalPrice] = React.useState();
@@ -150,6 +151,23 @@ const Panier = () => {
             <h4 style={{ textAlign: "end" }}>
               Total Price: {totalPrice + "€"}
             </h4>
+            <div>
+              {cart.length !== 0 ? (
+                <>
+                  <div
+                    className="paypal-button-container"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      margin: "50px 0",
+                    }}
+                  >
+                    <PaypalCheckoutButton totalPrice={totalPrice} />
+                  </div>
+                </>
+              ) : null}
+            </div>
           </>
         ) : (
           <Container

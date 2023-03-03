@@ -423,45 +423,50 @@ function HeaderPanier() {
                   </Container>
                 )}
               </div>
-              {cart.length !== 0 ? (
-                <>
-                  <div
-                    className="paypal-button-container"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "50px 0",
-                    }}
-                  >
-                    <PaypalCheckoutButton
-                      modal={setOpen}
-                      totalPrice={totalPrice}
-                    />
-                  </div>
-                  <Button
-                    style={{
-                      backgroundColor: "rgb(152, 4, 51)",
-                      borderRadius: "10px",
-                    }}
-                  >
-                    <NavLink
+              <div>
+                {cart.length !== 0 ? (
+                  <>
+                    <div
+                      className="paypal-button-container"
                       style={{
-                        color: "#fff",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        margin: "50px 0",
                       }}
-                      onClick={handleClose}
-                      to={"/Panier"}
                     >
-                      <StoreMallDirectoryOutlinedIcon
-                        style={{
-                          fontSize: "30px",
-                        }}
+                      <PaypalCheckoutButton
+                        modal={setOpen}
+                        totalPrice={totalPrice}
                       />
-                      <Typography>Panier</Typography>
-                    </NavLink>
-                  </Button>
-                </>
-              ) : null}
+                    </div>
+                  </>
+                ) : null}
+              </div>
+              <Button
+                style={{
+                  backgroundColor: "rgb(152, 4, 51)",
+                  borderRadius: "10px",
+                  position: "sticky",
+                  bottom: "20px",
+                  left: "20px",
+                }}
+              >
+                <NavLink
+                  style={{
+                    color: "#fff",
+                  }}
+                  onClick={handleClose}
+                  to={"/Panier"}
+                >
+                  <StoreMallDirectoryOutlinedIcon
+                    style={{
+                      fontSize: "30px",
+                    }}
+                  />
+                  <Typography>Panier</Typography>
+                </NavLink>
+              </Button>
             </Container>
           </div>
         </Box>
