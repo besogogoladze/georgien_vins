@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import Panier from "../../../Icons/panier.png";
+import Panier from "../../../Icons/panier.webp";
 import { Container } from "@mui/system";
 import { CartState } from "../../../Context/UseContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";

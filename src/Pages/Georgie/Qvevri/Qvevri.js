@@ -2,7 +2,7 @@ import { Divider, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { CartState } from "../../../Context/UseContext";
-import Qvevri_free from "../../../Icons/Qvevri-free.jpg";
+import Qvevri_free from "../../../Icons/Qvevri-free.webp";
 import "../Georgie.css";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";

@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./SectionTwo.css";
-import vin2 from "../../Icons/pro-2.png";
-import vin3 from "../../Icons/pro-3.png";
-import vin4 from "../../Icons/pro-4.png";
-import vin5 from "../../Icons/pro-5.png";
-import vin6 from "../../Icons/pro-6.png";
-import promo1 from "../../Icons/promo-1.png";
-import promo2 from "../../Icons/promo-2.png";
-import promo3 from "../../Icons/promo-3.png";
+import vin2 from "../../Icons/pro-2.webp";
+import vin3 from "../../Icons/pro-3.webp";
+import vin4 from "../../Icons/pro-4.webp";
+import vin5 from "../../Icons/pro-5.webp";
+import vin6 from "../../Icons/pro-6.webp";
+import promo1 from "../../Icons/promo-1.webp";
+import promo2 from "../../Icons/promo-2.webp";
+import promo3 from "../../Icons/promo-3.webp";
 import { CartState } from "../../Context/UseContext";
 
 const SectionTwo = () => {

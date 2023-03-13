@@ -2,9 +2,9 @@ import { Container } from "@mui/system";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CartState } from "../../Context/UseContext";
-import DHL from "../../Icons/dhl.png";
-import DPD from "../../Icons/dpd.png";
-import UPS from "../../Icons/ups-old.png";
+import DHL from "../../Icons/dhl.webp";
+import DPD from "../../Icons/dpd.webp";
+import UPS from "../../Icons/ups-old.webp";
 
 const Footer = () => {
   const {

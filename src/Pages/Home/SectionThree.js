@@ -1,13 +1,13 @@
 import { Container } from "@mui/system";
 import React from "react";
-import bgImg from "../../Icons/bg-1.jpg";
+import bgImg from "../../Icons/bg-1.webp";
 import "./SectionThree.css";
-import georgian_sun from "../../Icons/georgian_sun.jfif";
-import giuaani_logo from "../../Icons/giuaani_logo.png";
-import kankatela from "../../Icons/kankatela.png";
-import mukuzani from "../../Icons/mukuzani.jpg";
-import royal_khvanchkara from "../../Icons/royal-khvanchkara-logo.png";
-import vazisubani_logo from "../../Icons/vazisubani-logo.png";
+import georgian_sun from "../../Icons/georgian_sun.webp";
+import giuaani_logo from "../../Icons/giuaani_logo.webp";
+import kankatela from "../../Icons/kankatela.webp";
+import mukuzani from "../../Icons/mukuzani.webp";
+import royal_khvanchkara from "../../Icons/royal-khvanchkara-logo.webp";
+import vazisubani_logo from "../../Icons/vazisubani-logo.webp";
 import { CartState } from "../../Context/UseContext";
 
 const SectionThree = () => {

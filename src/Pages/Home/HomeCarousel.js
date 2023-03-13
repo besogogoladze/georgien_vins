@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import slide_1 from "../../Icons/slide_1.jpg";
-import slide_2 from "../../Icons/slide_2.jpg";
+import slide_1 from "../../Icons/slide_1.webp";
+import slide_2 from "../../Icons/slide_2.webp";
 import Carousel from "react-elastic-carousel";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";

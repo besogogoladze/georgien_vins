@@ -11,7 +11,7 @@ import {
 import React, { useEffect } from "react";
 import { CartState } from "../Context/UseContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import PanierImg from "../Icons/panier.png";
+import PanierImg from "../Icons/panier.webp";
 import { styled } from "@mui/material/styles";
 import { Select } from "@mui/material";
 import PaypalCheckoutButton from "../Components/Paypal/PaypalCheckoutButton";

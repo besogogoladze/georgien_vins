@@ -5,11 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActions, Container, Divider } from "@mui/material";
-import Raisin_De_Georgie2 from "../../Icons/vin-georgie-raisin2.jpg";
+import Raisin_De_Georgie2 from "../../Icons/vin-georgie-raisin2.webp";
 import KeyboardDoubleArrowRightRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowRightRounded";
 import { CartState } from "../../Context/UseContext";
-import Cropped_Cepage from "../../Icons/cropped-cépage.jpg";
-import Cropped_Qvevri from "../../Icons/cropped-qvevri.jpg";
+import Cropped_Cepage from "../../Icons/cropped-cépage.webp";
+import Cropped_Qvevri from "../../Icons/cropped-qvevri.webp";
 import "./Georgie.css";
 import { Zoom } from "react-awesome-reveal";
 
