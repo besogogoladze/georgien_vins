@@ -103,7 +103,7 @@ function HeaderPanier() {
         onMouseLeave={handleMouseLeave}
         onClick={handleOpen}
       >
-        <span style={{ marginRight: "5px" }} aria-label="cart">
+        <span style={{ marginRight: "5px" }}>
           <StyledBadge
             badgeContent={cart.length > 0 ? cart.length : null}
             color={cart.length > 0 ? "success" : "warning"}
