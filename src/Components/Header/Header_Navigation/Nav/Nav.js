@@ -25,7 +25,7 @@ const Nav = () => {
       }}
     >
       <li>
-        <NavLink className="nav_a" exact="true" to="/georgien_vins">
+        <NavLink className="nav_a" exact="true" to="/">
           HOME
         </NavLink>
       </li>

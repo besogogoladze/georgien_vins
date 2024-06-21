@@ -9,7 +9,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { NavLink } from "react-router-dom";
-import MonCompte from "./Header_mon_compte/MonCompte";
+// import MonCompte from "./Header_mon_compte/MonCompte";
 import HeaderPanier from "./Header_Panier/HeaderPanier";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -101,7 +101,7 @@ function UpHeader() {
             Livraison gratuite à partir de 50€
           </p>
         </Tooltip>
-        <NavLink id="UpHeader_logo" exact="true" to="/georgien_vins">
+        <NavLink id="UpHeader_logo" exact="true" to="/">
           <Logo fill={theme} style={{ width: "60px", height: "auto" }} />
         </NavLink>
         <div
@@ -124,7 +124,7 @@ function UpHeader() {
             </FormGroup>
           )}
 
-          <MonCompte />
+          {/* <MonCompte /> */}
           <div
             style={{
               color: theme === "light" ? "#fff" : "",

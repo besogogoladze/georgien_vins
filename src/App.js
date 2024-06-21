@@ -17,7 +17,7 @@ import { Alert } from "@mui/material";
 import WifiOffRoundedIcon from "@mui/icons-material/WifiOffRounded";
 import WifiRoundedIcon from "@mui/icons-material/WifiRounded";
 const Home = lazy(() => import("./Pages/Home"));
-const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
+// const ProfilPersonnel = lazy(() => import("./Pages/ProfilPersonnel"));
 const Product = lazy(() => import("./Pages/Product"));
 const Panier = lazy(() => import("./Pages/Panier"));
 const Vins = lazy(() => import("./Pages/Vins/Vins"));
@@ -85,13 +85,13 @@ function App() {
         <>
           <Header />
           <Routes>
-            <Route path="/georgien_vins" exact element={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/VINS" exact element={<Vins />} />
-            <Route
+            {/* <Route
               path="/Profil_Personnel"
               exact
               element={<ProfilPersonnel />}
-            />
+            /> */}
             <Route path="/georgien_vins/:id" element={<Product />} />
             <Route path="/Panier" element={<Panier />} />
             <Route path="/GEORGIE" element={<Georgie />} />

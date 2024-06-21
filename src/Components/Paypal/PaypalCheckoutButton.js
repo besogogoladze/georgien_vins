@@ -45,7 +45,7 @@ function PaypalCheckoutButton(props) {
         onApprove={async (data, actions) => {
           await actions.order.capture();
           dispatch({ type: "CLEAR_CART" });
-          navigate("/georgien_vins");
+          navigate("/");
           modal(false);
         }}
         onError={(err) => {

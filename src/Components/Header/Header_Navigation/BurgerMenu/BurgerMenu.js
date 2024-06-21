@@ -63,7 +63,7 @@ const BurgerMenu = () => {
             style={{ color: theme === "light" ? "#333" : "#980433" }}
             className="nav_a"
             exact="true"
-            to="/georgien_vins"
+            to="/"
           >
             HOME
           </NavLink>
